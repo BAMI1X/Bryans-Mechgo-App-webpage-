@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>MechGo | Roadside Mechanics On Demand</title>
+    <meta
+      name="description"
+      content="MechGo helps stranded drivers find nearby mobile mechanics, compare live quotes, and book roadside help fast."
+    />
+    <meta name="theme-color" content="#ff8a3d" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="site.webmanifest" />
+  </head>
+  <body class="has-tab-dock" data-page="home">
+    <div class="bg-orb bg-orb-one"></div>
+    <div class="bg-orb bg-orb-two"></div>
+    <div class="grid-overlay"></div>
+
+    <header class="site-header shell">
+      <nav class="topbar">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">M</span>
+          <span>
+            <strong>MechGo</strong>
+            <small>Roadside mechanics on demand</small>
+          </span>
+        </a>
+
+        <div class="nav-actions">
+          <a data-nav-link href="terms.html">Terms</a>
+          <a data-nav-link href="support.html">Support</a>
+          <a data-nav-link href="download-app.html">Get app</a>
+          <a class="secondary-button nav-auth-link" data-auth-link data-nav-link href="signin.html">Sign in</a>
+          <a class="ghost-button nav-cta" href="signin.html?role=customer&mode=create">Create account</a>
+        </div>
+      </nav>
+
+      <div class="page-tabs" aria-label="MechGo sections">
+        <a class="page-tab" data-nav-link href="signin.html">
+          <strong>Sign In</strong>
+          <span>Customer or mechanic access</span>
+        </a>
+        <a class="page-tab" data-nav-link href="download-app.html">
+          <strong>App</strong>
+          <span>iPhone and Android</span>
+        </a>
+        <a class="page-tab" data-nav-link href="terms.html">
+          <strong>Terms</strong>
+          <span>Policies and legal</span>
+        </a>
+        <a class="page-tab" data-nav-link href="support.html">
+          <strong>Support</strong>
+          <span>Report a problem</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <section class="hero shell" id="top">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Built for roadside breakdowns between Point A and Point B</p>
+            <h1>Start with sign in, then unlock the full MechGo roadside workspace.</h1>
+            <p class="lead">
+              MechGo gives drivers and mechanics one secure place to manage roadside
+              help. The public landing page stays intentionally minimal, and the full
+              customer, mechanic, booking, dispatch, and settings tools unlock after
+              sign-in.
+            </p>
+
+            <div class="hero-actions">
+              <a class="primary-button" href="signin.html">Open sign-in</a>
+              <a class="text-link" href="signin.html?role=customer&mode=create">Create customer account</a>
+            </div>
+
+          </div>
+
+          <div class="quick-request-card">
+            <div class="card-header">
+              <span class="status-pill">Public access</span>
+              <h2>Choose how you want to enter MechGo.</h2>
+              <p>
+                Sign in or create the right kind of account first, then the dashboard
+                unlocks the full MechGo workspace.
+              </p>
+            </div>
+
+            <div class="stack-form">
+              <a class="primary-button" href="signin.html?role=customer&mode=create">Create customer account</a>
+              <a class="secondary-button" href="signin.html?role=mechanic&mode=create">Create mechanic account</a>
+              <a class="ghost-button" href="signin.html">Sign in to dashboard</a>
+            </div>
+
+            <div class="signal-row">
+              <span>Sign in</span>
+              <span>Create account</span>
+              <span>Open dashboard</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="shell services" aria-label="Account access">
+        <div class="page-panel" data-interactive-surface>
+          <div class="panel-heading">
+            <h3>Everything else opens inside the dashboard.</h3>
+            <span class="status-pill status-pill-alt">Private workspace</span>
+          </div>
+          <p>
+            Booking, live marketplace access, customer profiles, saved vehicles,
+            payment methods, mechanic receiving methods, verification, and dispatch
+            history now live inside the logged-in MechGo dashboard instead of the
+            public homepage.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-button" href="signin.html">Open access portal</a>
+            <a class="text-link" href="signin.html?role=mechanic&mode=create">Create mechanic account</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="shell trust-strip" aria-label="MechGo trust signals">
+        <article data-interactive-surface>
+          <span>Verified providers</span>
+          <strong>Mechanic onboarding should check identity, insurance, service area, and payout readiness.</strong>
+        </article>
+        <article data-interactive-surface>
+          <span>Price clarity</span>
+          <strong>Customers should see callout fees, labor estimates, and refund rules before dispatch.</strong>
+        </article>
+        <article data-interactive-surface>
+          <span>Safety support</span>
+          <strong>Every roadside job needs ETA updates, support escalation, and a clear emergency disclaimer.</strong>
+        </article>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <nav class="tab-dock" aria-label="MechGo mobile navigation">
+      <a data-nav-link href="signin.html">
+        <strong>Sign In</strong>
+        <span>Access</span>
+      </a>
+      <a data-nav-link href="download-app.html">
+        <strong>App</strong>
+        <span>Mobile</span>
+      </a>
+      <a data-nav-link href="terms.html">
+        <strong>Terms</strong>
+        <span>Legal</span>
+      </a>
+      <a data-nav-link href="support.html">
+        <strong>Support</strong>
+        <span>Help</span>
+      </a>
+    </nav>
+
+    <script src="api-client.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

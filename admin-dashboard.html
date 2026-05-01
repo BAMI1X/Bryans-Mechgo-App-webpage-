@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>MechGo Admin Dashboard | Operations Command Center</title>
+    <meta
+      name="description"
+      content="Review MechGo registrations, support complaints, bookings, and verification submissions from the admin dashboard."
+    />
+    <meta name="theme-color" content="#ff8a3d" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="site.webmanifest" />
+  </head>
+  <body class="has-tab-dock" data-page="admin-dashboard">
+    <div class="bg-orb bg-orb-one"></div>
+    <div class="bg-orb bg-orb-two"></div>
+    <div class="grid-overlay"></div>
+
+    <header class="site-header shell">
+      <nav class="topbar">
+        <a class="brand" href="admin-dashboard.html">
+          <span class="brand-mark">A</span>
+          <span>
+            <strong>MechGo Admin</strong>
+            <small>Operations and support command</small>
+          </span>
+        </a>
+
+        <div class="nav-actions">
+          <a data-admin-anchor href="#adminOverview">Overview</a>
+          <a data-admin-anchor href="#adminUsers">Users</a>
+          <a data-admin-anchor href="#adminBookings">Bookings</a>
+          <a data-admin-anchor href="#adminSupport">Complaints</a>
+          <a data-admin-anchor href="#adminVerification">Verification</a>
+          <a href="index.html">Main site</a>
+          <button class="ghost-button" id="adminSignOutButton" type="button">Log out</button>
+        </div>
+      </nav>
+
+      <div class="page-tabs" aria-label="Admin sections">
+        <a class="page-tab" data-admin-anchor href="#adminOverview">
+          <strong>Overview</strong>
+          <span>Platform health and watchlist</span>
+        </a>
+        <a class="page-tab" data-admin-anchor href="#adminUsers">
+          <strong>Users</strong>
+          <span>Drivers and mechanics</span>
+        </a>
+        <a class="page-tab" data-admin-anchor href="#adminBookings">
+          <strong>Bookings</strong>
+          <span>Dispatch activity</span>
+        </a>
+        <a class="page-tab" data-admin-anchor href="#adminSupport">
+          <strong>Complaints</strong>
+          <span>Support and safety queue</span>
+        </a>
+        <a class="page-tab" data-admin-anchor href="#adminVerification">
+          <strong>Verification</strong>
+          <span>Driver document review</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <section class="page-hero shell" id="adminOverview">
+        <div class="page-hero-grid">
+          <div class="page-hero-copy" data-reveal>
+            <p class="eyebrow">Admin dashboard</p>
+            <h1 id="adminDashboardGreeting">Welcome to MechGo Admin.</h1>
+            <p class="lead" id="adminDashboardMeta">
+              This command center tracks registration growth, dispatch demand,
+              support complaints, and verification reviews across the platform.
+            </p>
+
+            <div class="admin-kpi-grid">
+              <article class="page-panel admin-kpi" data-interactive-surface>
+                <span>Drivers</span>
+                <strong id="adminMetricCustomers">0</strong>
+              </article>
+              <article class="page-panel admin-kpi" data-interactive-surface>
+                <span>Mechanics</span>
+                <strong id="adminMetricMechanics">0</strong>
+              </article>
+              <article class="page-panel admin-kpi" data-interactive-surface>
+                <span>Bookings</span>
+                <strong id="adminMetricBookings">0</strong>
+              </article>
+              <article class="page-panel admin-kpi" data-interactive-surface>
+                <span>Open issues</span>
+                <strong id="adminMetricIssues">0</strong>
+              </article>
+            </div>
+          </div>
+
+          <div class="page-hero-side admin-section-stack">
+            <div class="page-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Admin session</h3>
+                <span class="status-pill" id="adminSessionBadge">Offline</span>
+              </div>
+              <div class="account-summary">
+                <strong id="adminSessionName">@admin</strong>
+                <span id="adminSessionMeta">Admin account details load after sign-in.</span>
+              </div>
+              <p id="adminHealthSummary">
+                Platform watchlist details will appear here after the dashboard loads.
+              </p>
+              <div class="hero-actions">
+                <a class="secondary-button" href="#adminUsers">Open user records</a>
+                <button class="ghost-button" id="adminSignOutButtonHero" type="button">Log out</button>
+              </div>
+            </div>
+
+            <div class="page-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Watchlist</h3>
+                <span class="status-pill status-pill-alt" id="adminWatchlistBadge">Live sync</span>
+              </div>
+              <div class="page-panel-list">
+                <article>
+                  <span>Pending verification</span>
+                  <strong id="adminPendingVerificationText">No driver submissions waiting.</strong>
+                </article>
+                <article>
+                  <span>Support complaints</span>
+                  <strong id="adminSupportComplaintText">No support complaints are waiting.</strong>
+                </article>
+                <article>
+                  <span>Latest booking</span>
+                  <strong id="adminLatestBookingText">No bookings have been recorded yet.</strong>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dashboard-shell shell" id="adminUsers">
+        <div class="section-copy">
+          <p class="eyebrow">Registered users</p>
+          <h2>Monitor who has joined on both sides of MechGo.</h2>
+          <p class="section-note">
+            These lists combine account registration data with the richer profile details
+            saved inside the customer and mechanic workspaces.
+          </p>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="page-panel" data-interactive-surface>
+            <div class="panel-heading">
+              <h3>Drivers and customers</h3>
+              <span class="status-pill" id="adminCustomerCount">0 records</span>
+            </div>
+            <div class="admin-card-list" id="adminCustomerList"></div>
+          </article>
+
+          <article class="page-panel" data-interactive-surface>
+            <div class="panel-heading">
+              <h3>Registered mechanics</h3>
+              <span class="status-pill status-pill-alt" id="adminMechanicCount">0 records</span>
+            </div>
+            <div class="admin-card-list" id="adminMechanicList"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="dashboard-shell shell" id="adminBookings">
+        <div class="section-copy">
+          <p class="eyebrow">Dispatch activity</p>
+          <h2>Review the latest roadside service bookings.</h2>
+          <p class="section-note">
+            The admin side can see who booked, which mechanic was matched, the pricing
+            range, and the service details that were captured at request time.
+          </p>
+        </div>
+
+        <div class="page-panel" data-interactive-surface>
+          <div class="panel-heading">
+            <h3>Recent bookings</h3>
+            <span class="status-pill" id="adminBookingCount">0 bookings</span>
+          </div>
+          <div class="admin-card-list" id="adminBookingList"></div>
+        </div>
+      </section>
+
+      <section class="dashboard-shell shell" id="adminSupport">
+        <div class="section-copy">
+          <p class="eyebrow">Support complaints</p>
+          <h2>Receive and manage service problems from the main app.</h2>
+          <p class="section-note">
+            This queue reflects the reports created in the MechGo support page so
+            administrators can triage issues without entering the customer workspace.
+          </p>
+        </div>
+
+        <div class="page-panel" data-interactive-surface>
+          <div class="panel-heading">
+            <h3>Complaint queue</h3>
+            <span class="status-pill status-pill-alt" id="adminSupportCount">0 complaints</span>
+          </div>
+          <div class="admin-card-list" id="adminSupportList"></div>
+        </div>
+      </section>
+
+      <section class="dashboard-shell shell" id="adminVerification">
+        <div class="section-copy">
+          <p class="eyebrow">Driver verification</p>
+          <h2>Review uploaded documents and update their status.</h2>
+          <p class="section-note">
+            Verification requests from the MechGo app land here so an admin can keep
+            track of document intake and manually approve or reject submissions.
+          </p>
+        </div>
+
+        <div class="page-panel" data-interactive-surface>
+          <div class="panel-heading">
+            <h3>Verification submissions</h3>
+            <span class="status-pill" id="adminVerificationCount">0 submissions</span>
+          </div>
+          <div class="admin-card-list" id="adminVerificationList"></div>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <nav class="tab-dock" aria-label="MechGo Admin mobile navigation">
+      <a data-admin-anchor href="#adminOverview">
+        <strong>Overview</strong>
+        <span>Health</span>
+      </a>
+      <a data-admin-anchor href="#adminUsers">
+        <strong>Users</strong>
+        <span>Records</span>
+      </a>
+      <a data-admin-anchor href="#adminBookings">
+        <strong>Bookings</strong>
+        <span>Jobs</span>
+      </a>
+      <a data-admin-anchor href="#adminSupport">
+        <strong>Support</strong>
+        <span>Queue</span>
+      </a>
+      <a data-admin-anchor href="#adminVerification">
+        <strong>Verify</strong>
+        <span>Docs</span>
+      </a>
+    </nav>
+
+    <script src="api-client.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>

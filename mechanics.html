@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>MechGo Mechanics | Registered Mechanic Network</title>
+    <meta
+      name="description"
+      content="Register mobile mechanics, set specialties and payment receiving methods, and publish dispatch-ready mechanic profiles into MechGo."
+    />
+    <meta name="theme-color" content="#ff8a3d" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="site.webmanifest" />
+  </head>
+  <body class="has-tab-dock" data-page="mechanics">
+    <div class="bg-orb bg-orb-one"></div>
+    <div class="bg-orb bg-orb-two"></div>
+    <div class="grid-overlay"></div>
+
+    <header class="site-header shell">
+      <nav class="topbar">
+        <a class="brand" href="dashboard.html">
+          <span class="brand-mark">M</span>
+          <span>
+            <strong>MechGo</strong>
+            <small>Roadside mechanics on demand</small>
+          </span>
+        </a>
+
+        <div class="nav-actions">
+          <a data-nav-link href="dashboard.html">Dashboard</a>
+          <a data-nav-link href="marketplace.html">Marketplace</a>
+          <a data-nav-link href="dispatch.html">Dispatch</a>
+          <a data-nav-link href="customers.html">Customers</a>
+          <a data-nav-link href="mechanics.html">Mechanics</a>
+          <a data-nav-link href="settings.html">Settings</a>
+          <a data-nav-link href="verification.html">Verification</a>
+          <a data-nav-link href="terms.html">Terms</a>
+          <a data-nav-link href="support.html">Support</a>
+          <a data-nav-link href="download-app.html">Get app</a>
+          <a class="secondary-button nav-auth-link" data-auth-link data-nav-link href="signin.html">Sign in</a>
+          <a class="ghost-button nav-cta" href="#mechanicArea">Mechanic network</a>
+        </div>
+      </nav>
+
+      <div class="page-tabs" aria-label="MechGo sections">
+        <a class="page-tab" data-nav-link href="dashboard.html">
+          <strong>Dashboard</strong>
+          <span>Logged-in control center</span>
+        </a>
+        <a class="page-tab" data-nav-link href="marketplace.html">
+          <strong>Marketplace</strong>
+          <span>Nearest mechanics</span>
+        </a>
+        <a class="page-tab" data-nav-link href="dispatch.html">
+          <strong>Dispatch</strong>
+          <span>Track active jobs</span>
+        </a>
+        <a class="page-tab" data-nav-link href="customers.html">
+          <strong>Customers</strong>
+          <span>Accounts and billing</span>
+        </a>
+        <a class="page-tab" data-nav-link href="mechanics.html">
+          <strong>Mechanics</strong>
+          <span>Operator network</span>
+        </a>
+        <a class="page-tab" data-nav-link href="settings.html">
+          <strong>Settings</strong>
+          <span>Verification and preferences</span>
+        </a>
+        <a class="page-tab" data-nav-link href="verification.html">
+          <strong>Verification</strong>
+          <span>Driver document review</span>
+        </a>
+        <a class="page-tab" data-nav-link href="terms.html">
+          <strong>Terms</strong>
+          <span>Policies and legal</span>
+        </a>
+        <a class="page-tab" data-nav-link href="support.html">
+          <strong>Support</strong>
+          <span>Report a problem</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <section class="page-hero shell">
+        <div class="page-hero-grid">
+          <div class="page-hero-copy" data-reveal>
+            <p class="eyebrow">Mechanic network</p>
+            <h1>Give mechanics their own dispatch-ready account tab.</h1>
+            <p class="lead">
+              MechGo now includes a dedicated mechanic workspace where roadside pros can
+              register their business, set specialties and coverage, and save payment
+              receiving methods before they go live in the marketplace.
+            </p>
+
+            <div class="hero-actions">
+              <a class="primary-button" href="#mechanicArea">Open mechanic workspace</a>
+              <a class="text-link" href="verification.html">Open verification desk</a>
+            </div>
+
+            <div class="page-stat-grid">
+              <article data-interactive-surface>
+                <span>Business profiles</span>
+                <strong>Store the shop name, lead mechanic, username, and dispatch contact details.</strong>
+              </article>
+              <article data-interactive-surface>
+                <span>Marketplace ready</span>
+                <strong>Registered mechanics can flow into live marketplace results with pricing and radius.</strong>
+              </article>
+              <article data-interactive-surface>
+                <span>Specialty setup</span>
+                <strong>Choose roadside services, dispatch mode, response speed, and coverage range.</strong>
+              </article>
+              <article data-interactive-surface>
+                <span>Receiving methods</span>
+                <strong>Store default payment receiving methods so the operator side feels complete too.</strong>
+              </article>
+            </div>
+          </div>
+
+          <div class="page-hero-side">
+            <div class="page-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Why mechanics need this</h3>
+                <span class="status-pill">Supply side</span>
+              </div>
+              <p>
+                A marketplace feels more real when mechanics have their own account and
+                dispatch setup, not just customer-facing cards. This page gives the
+                operator side the same level of care.
+              </p>
+            </div>
+
+            <div class="page-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Verification desk</h3>
+                <span class="status-pill status-pill-alt">Mechanic-side tools</span>
+              </div>
+              <p>
+                Driver document review lives with the mechanic workflow now, so
+                verification is handled from the operator side instead of the public
+                landing page.
+              </p>
+              <div class="hero-actions">
+                <a class="secondary-button" href="verification.html">Open verification</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="customer-area shell" id="mechanicArea">
+        <div class="section-copy">
+          <p class="eyebrow">Registered mechanics</p>
+          <h2>Store mechanic accounts, specialties, and payment receiving methods in one place.</h2>
+          <p class="section-note">
+            This workspace is built for the supply side of MechGo so the platform can
+            grow beyond a fixed demo mechanic list.
+          </p>
+        </div>
+
+        <div class="customer-area-layout">
+          <div class="customer-primary">
+            <div class="customer-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Register or update a mechanic</h3>
+                <span class="status-pill" id="mechanicFormModeLabel">Register a MechGo mechanic</span>
+              </div>
+
+              <form id="mechanicProfileForm" class="stack-form">
+                <input id="registeredMechanicId" name="registeredMechanicId" type="hidden" />
+
+                <div class="profile-tabs" role="tablist" aria-label="Mechanic profile sections">
+                  <button
+                    class="profile-tab is-active"
+                    data-profile-group="mechanic-profile"
+                    data-profile-tab="business"
+                    type="button"
+                  >
+                    Business
+                  </button>
+                  <button
+                    class="profile-tab"
+                    data-profile-group="mechanic-profile"
+                    data-profile-tab="coverage"
+                    type="button"
+                  >
+                    Coverage
+                  </button>
+                  <button
+                    class="profile-tab"
+                    data-profile-group="mechanic-profile"
+                    data-profile-tab="service"
+                    type="button"
+                  >
+                    Service
+                  </button>
+                </div>
+
+                <div
+                  class="profile-panel is-active"
+                  data-profile-group="mechanic-profile"
+                  data-profile-panel="business"
+                >
+                  <div class="form-grid">
+                    <label>
+                      Business name
+                      <input
+                        id="mechanicBusinessName"
+                        name="mechanicBusinessName"
+                        type="text"
+                        placeholder="Copper Wrench Mobile"
+                        required
+                      />
+                    </label>
+
+                    <label>
+                      Username
+                      <input
+                        id="mechanicUsername"
+                        name="mechanicUsername"
+                        type="text"
+                        placeholder="copperwrench"
+                        required
+                      />
+                    </label>
+
+                    <label>
+                      Lead mechanic
+                      <input
+                        id="mechanicLeadName"
+                        name="mechanicLeadName"
+                        type="text"
+                        placeholder="Avery Cole"
+                        required
+                      />
+                    </label>
+
+                    <label>
+                      Email address
+                      <input
+                        id="mechanicEmail"
+                        name="mechanicEmail"
+                        type="email"
+                        placeholder="dispatch@shop.com"
+                        required
+                      />
+                    </label>
+
+                    <label>
+                      Phone number
+                      <input
+                        id="mechanicPhone"
+                        name="mechanicPhone"
+                        type="tel"
+                        placeholder="(555) 555-0119"
+                        required
+                      />
+                    </label>
+
+                    <label>
+                      Base city
+                      <input
+                        id="mechanicBaseCity"
+                        name="mechanicBaseCity"
+                        type="text"
+                        placeholder="Austin, TX"
+                        required
+                      />
+                    </label>
+
+                    <label>
+                      Base address
+                      <input
+                        id="mechanicBaseAddress"
+                        name="mechanicBaseAddress"
+                        type="text"
+                        placeholder="1208 East 5th St, Austin, TX"
+                      />
+                    </label>
+                  </div>
+                </div>
+
+                <div
+                  class="profile-panel"
+                  data-profile-group="mechanic-profile"
+                  data-profile-panel="coverage"
+                  hidden
+                >
+                  <div class="form-grid">
+                    <label>
+                      Service radius (miles)
+                      <input
+                        id="mechanicServiceRadius"
+                        name="mechanicServiceRadius"
+                        type="number"
+                        min="5"
+                        max="100"
+                        value="25"
+                        required
+                      />
+                    </label>
+
+                    <label>
+                      Base callout
+                      <input
+                        id="mechanicBaseCallout"
+                        name="mechanicBaseCallout"
+                        type="number"
+                        min="45"
+                        value="84"
+                        required
+                      />
+                    </label>
+
+                    <label>
+                      Standard ETA (minutes)
+                      <input
+                        id="mechanicEtaMinutes"
+                        name="mechanicEtaMinutes"
+                        type="number"
+                        min="8"
+                        value="18"
+                        required
+                      />
+                    </label>
+
+                    <label>
+                      Completed jobs
+                      <input
+                        id="mechanicJobsCompleted"
+                        name="mechanicJobsCompleted"
+                        type="number"
+                        min="0"
+                        value="0"
+                        required
+                      />
+                    </label>
+
+                    <label>
+                      Dispatch mode
+                      <select id="mechanicDispatchMode" name="mechanicDispatchMode">
+                        <option value="full">24/7 emergency dispatch</option>
+                        <option value="emergency">Emergency crew on duty</option>
+                        <option value="sameDay">Same-day roadside coverage</option>
+                        <option value="scheduled">Scheduled specialist</option>
+                      </select>
+                    </label>
+
+                    <label>
+                      Service vehicle
+                      <input
+                        id="mechanicServiceVehicle"
+                        name="mechanicServiceVehicle"
+                        type="text"
+                        placeholder="Ford Transit service van"
+                      />
+                    </label>
+
+                    <label>
+                      Credential status
+                      <input
+                        id="mechanicCredentialStatus"
+                        name="mechanicCredentialStatus"
+                        type="text"
+                        placeholder="ASE certified, insured, and active"
+                      />
+                    </label>
+                  </div>
+
+                  <label>
+                    Coverage notes
+                    <textarea
+                      id="mechanicCoverageNotes"
+                      name="mechanicCoverageNotes"
+                      rows="4"
+                      placeholder="Night coverage across I-35 corridor, apartment garage support, or after-hours dispatch notes."
+                    ></textarea>
+                  </label>
+                </div>
+
+                <div
+                  class="profile-panel"
+                  data-profile-group="mechanic-profile"
+                  data-profile-panel="service"
+                  hidden
+                >
+                  <div class="stack-form">
+                    <span class="field-label">Roadside specialties</span>
+                    <div class="specialty-grid">
+                      <label class="specialty-chip">
+                        <input data-mechanic-specialty type="checkbox" value="battery" />
+                        <span>Battery</span>
+                      </label>
+                      <label class="specialty-chip">
+                        <input data-mechanic-specialty type="checkbox" value="tire" />
+                        <span>Tire</span>
+                      </label>
+                      <label class="specialty-chip">
+                        <input data-mechanic-specialty type="checkbox" value="brakes" />
+                        <span>Brakes</span>
+                      </label>
+                      <label class="specialty-chip">
+                        <input data-mechanic-specialty type="checkbox" value="engine" />
+                        <span>Engine</span>
+                      </label>
+                      <label class="specialty-chip">
+                        <input data-mechanic-specialty type="checkbox" value="diagnostic" />
+                        <span>Diagnostic</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <label>
+                    Mechanic bio
+                    <textarea
+                      id="mechanicBio"
+                      name="mechanicBio"
+                      rows="4"
+                      placeholder="Highway breakdown specialist covering no-start diagnostics, battery swaps, and fast roadside triage."
+                      required
+                    ></textarea>
+                  </label>
+                </div>
+
+                <button class="primary-button" id="mechanicProfileSubmitButton" type="submit">
+                  Save mechanic profile
+                </button>
+              </form>
+            </div>
+
+            <div class="customer-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Registered mechanics</h3>
+                <span id="mechanicCount">0 mechanics</span>
+              </div>
+              <div id="mechanicDirectory" class="customer-directory"></div>
+            </div>
+          </div>
+
+          <div class="customer-side">
+            <div class="customer-panel customer-command-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Active mechanic</h3>
+                <span class="status-pill status-pill-alt" id="mechanicAccountBadge">No active mechanic</span>
+              </div>
+
+              <div class="customer-identity">
+                <strong id="activeMechanicName">No mechanic selected</strong>
+                <span id="activeMechanicHandle">@register-a-mechanic</span>
+              </div>
+
+              <p class="customer-panel-copy" id="activeMechanicSummary">
+                Create a MechGo mechanic account to store service coverage, dispatch pricing, specialties, and receiving methods.
+              </p>
+
+              <div class="customer-metrics">
+                <article>
+                  <span>Base city</span>
+                  <strong id="activeMechanicCity">Not set</strong>
+                </article>
+                <article>
+                  <span>Service radius</span>
+                  <strong id="activeMechanicRadius">Not set</strong>
+                </article>
+                <article>
+                  <span>Base callout</span>
+                  <strong id="activeMechanicPricing">Not set</strong>
+                </article>
+                <article>
+                  <span>Default receiving</span>
+                  <strong id="activeMechanicPayoutDefault">No receiving method</strong>
+                </article>
+                <article>
+                  <span>Dispatch mode</span>
+                  <strong id="activeMechanicMode">Dispatch inactive</strong>
+                </article>
+              </div>
+
+              <p class="customer-panel-copy customer-contact-copy" id="activeMechanicContact">
+                No contact details yet
+              </p>
+            </div>
+
+            <div class="customer-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Add payment receiving method</h3>
+                <span class="status-pill" id="payoutMechanicTag">Select a mechanic to save receiving details</span>
+              </div>
+
+              <form id="payoutMethodForm" class="stack-form">
+                <div class="form-grid">
+                  <label>
+                    Receiving type
+                    <select id="payoutMethodType" name="payoutMethodType">
+                      <option value="bank">Bank transfer</option>
+                      <option value="debit">Debit card</option>
+                      <option value="paypal">PayPal</option>
+                      <option value="cashapp">Cash App</option>
+                      <option value="zelle">Zelle</option>
+                    </select>
+                  </label>
+
+                  <label>
+                    Receiving label
+                    <input
+                      id="payoutMethodLabel"
+                      name="payoutMethodLabel"
+                      type="text"
+                      placeholder="Primary business checking"
+                    />
+                  </label>
+
+                  <label>
+                    Last four digits
+                    <input
+                      id="payoutMethodLastFour"
+                      name="payoutMethodLastFour"
+                      type="text"
+                      inputmode="numeric"
+                      maxlength="4"
+                      placeholder="1024"
+                      required
+                    />
+                  </label>
+
+                  <label>
+                    Receiving frequency
+                    <select id="payoutMethodFrequency" name="payoutMethodFrequency">
+                      <option value="daily">Daily</option>
+                      <option value="weekly">Weekly</option>
+                      <option value="biweekly">Biweekly</option>
+                    </select>
+                  </label>
+                </div>
+
+                <label class="toggle-field">
+                  <input id="payoutMethodDefault" name="payoutMethodDefault" type="checkbox" checked />
+                  Make this the default receiving route
+                </label>
+
+                <button class="secondary-button" type="submit">Save receiving method</button>
+              </form>
+            </div>
+
+            <div class="customer-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Saved receiving methods</h3>
+                <span id="payoutMethodCount">0 methods</span>
+              </div>
+              <p class="customer-panel-copy" id="payoutHint">
+                Select a mechanic profile to unlock payment receiving methods for the active operator account.
+              </p>
+              <div id="payoutMethodList" class="payment-method-list"></div>
+            </div>
+
+            <div class="customer-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Verification access</h3>
+                <span class="status-pill status-pill-alt">Mechanic dashboard</span>
+              </div>
+              <p class="customer-panel-copy">
+                Review customer-submitted license, registration, and insurance details
+                from the mechanic side when a job needs identity or vehicle context.
+              </p>
+              <div class="hero-actions">
+                <a class="secondary-button" href="verification.html">Open verification desk</a>
+                <a class="ghost-button" href="support.html">Open support</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="how shell">
+        <div class="section-copy">
+          <p class="eyebrow">Mechanic flow</p>
+          <h2>How the mechanic tab works inside MechGo.</h2>
+        </div>
+
+        <div class="how-grid">
+          <article data-interactive-surface>
+            <span>1</span>
+            <h3>Register the operator</h3>
+            <p>Save the business name, dispatch handle, lead mechanic, and coverage city.</p>
+          </article>
+          <article data-interactive-surface>
+            <span>2</span>
+            <h3>Set service logic</h3>
+            <p>Choose specialties, response radius, pricing, ETA, and dispatch mode for the mechanic profile.</p>
+          </article>
+          <article data-interactive-surface>
+            <span>3</span>
+            <h3>Go live in marketplace</h3>
+            <p>Registered mechanics can feed into marketplace results so MechGo grows beyond the starter dataset.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <template id="registeredMechanicTemplate">
+      <article class="customer-card" data-interactive-surface>
+        <div class="customer-card-header">
+          <div>
+            <p class="registered-mechanic-status customer-card-status"></p>
+            <h3 class="registered-mechanic-name customer-card-name"></h3>
+            <span class="registered-mechanic-handle customer-card-handle"></span>
+          </div>
+        </div>
+        <p class="registered-mechanic-home customer-card-home"></p>
+        <p class="registered-mechanic-contact customer-card-contact"></p>
+        <p class="registered-mechanic-plan customer-card-plan"></p>
+        <p class="registered-mechanic-payment customer-card-payment"></p>
+        <div class="customer-actions">
+          <button class="secondary-button registered-mechanic-select-button" type="button">Set active</button>
+          <button class="ghost-button registered-mechanic-edit-button" type="button">Edit profile</button>
+        </div>
+      </article>
+    </template>
+
+    <template id="payoutMethodTemplate">
+      <article class="payment-card" data-interactive-surface>
+        <div class="payment-card-header">
+          <div>
+            <p class="payout-card-type payment-card-type"></p>
+            <h3 class="payout-card-label payment-card-label"></h3>
+          </div>
+          <span class="payout-card-badge payment-card-badge"></span>
+        </div>
+        <p class="payout-card-meta payment-card-meta"></p>
+        <p class="payout-card-zip payment-card-zip"></p>
+        <div class="payment-actions">
+          <button class="secondary-button payout-set-default-button" type="button">Set default</button>
+          <button class="ghost-button payout-remove-button" type="button">Remove</button>
+        </div>
+      </article>
+    </template>
+
+    <nav class="tab-dock" aria-label="MechGo mobile navigation">
+      <a data-nav-link href="dashboard.html">
+        <strong>Dash</strong>
+        <span>Center</span>
+      </a>
+      <a data-nav-link href="marketplace.html">
+        <strong>Market</strong>
+        <span>Nearby pros</span>
+      </a>
+      <a data-nav-link href="dispatch.html">
+        <strong>Dispatch</strong>
+        <span>Live jobs</span>
+      </a>
+      <a data-nav-link href="customers.html">
+        <strong>Acct</strong>
+        <span>Drivers</span>
+      </a>
+      <a data-nav-link href="mechanics.html">
+        <strong>Mechs</strong>
+        <span>Network</span>
+      </a>
+      <a data-nav-link href="settings.html">
+        <strong>Prefs</strong>
+        <span>Settings</span>
+      </a>
+      <a data-nav-link href="verification.html">
+        <strong>Verify</strong>
+        <span>Docs</span>
+      </a>
+      <a data-nav-link href="terms.html">
+        <strong>Terms</strong>
+        <span>Legal</span>
+      </a>
+      <a data-nav-link href="support.html">
+        <strong>Support</strong>
+        <span>Help</span>
+      </a>
+    </nav>
+
+    <script src="api-client.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

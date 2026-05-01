@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>MechGo Marketplace | Nearest Mechanics</title>
+    <meta
+      name="description"
+      content="Compare nearby roadside mechanics with GPS-aware ranking, live pricing signals, and fast booking."
+    />
+    <meta name="theme-color" content="#ff8a3d" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="site.webmanifest" />
+  </head>
+  <body class="has-tab-dock" data-page="marketplace">
+    <div class="bg-orb bg-orb-one"></div>
+    <div class="bg-orb bg-orb-two"></div>
+    <div class="grid-overlay"></div>
+
+    <header class="site-header shell">
+      <nav class="topbar">
+        <a class="brand" href="dashboard.html">
+          <span class="brand-mark">M</span>
+          <span>
+            <strong>MechGo</strong>
+            <small>Roadside mechanics on demand</small>
+          </span>
+        </a>
+
+        <div class="nav-actions">
+          <a data-nav-link href="dashboard.html">Dashboard</a>
+          <a data-nav-link href="marketplace.html">Marketplace</a>
+          <a data-nav-link href="dispatch.html">Dispatch</a>
+          <a data-nav-link href="customers.html">Customers</a>
+          <a data-nav-link href="mechanics.html">Mechanics</a>
+          <a data-nav-link href="settings.html">Settings</a>
+          <a data-nav-link href="terms.html">Terms</a>
+          <a data-nav-link href="support.html">Support</a>
+          <a data-nav-link href="download-app.html">Get app</a>
+          <a class="secondary-button nav-auth-link" data-auth-link data-nav-link href="signin.html">Sign in</a>
+          <a class="ghost-button nav-cta" href="#marketplace">Live matching</a>
+        </div>
+      </nav>
+
+      <div class="page-tabs" aria-label="MechGo sections">
+        <a class="page-tab" data-nav-link href="dashboard.html">
+          <strong>Dashboard</strong>
+          <span>Logged-in control center</span>
+        </a>
+        <a class="page-tab" data-nav-link href="marketplace.html">
+          <strong>Marketplace</strong>
+          <span>Nearest mechanics</span>
+        </a>
+        <a class="page-tab" data-nav-link href="dispatch.html">
+          <strong>Dispatch</strong>
+          <span>Track active jobs</span>
+        </a>
+        <a class="page-tab" data-nav-link href="customers.html">
+          <strong>Customers</strong>
+          <span>Accounts and billing</span>
+        </a>
+        <a class="page-tab" data-nav-link href="mechanics.html">
+          <strong>Mechanics</strong>
+          <span>Operator network</span>
+        </a>
+        <a class="page-tab" data-nav-link href="settings.html">
+          <strong>Settings</strong>
+          <span>Verification and preferences</span>
+        </a>
+        <a class="page-tab" data-nav-link href="download-app.html">
+          <strong>App</strong>
+          <span>Mobile download</span>
+        </a>
+        <a class="page-tab" data-nav-link href="terms.html">
+          <strong>Terms</strong>
+          <span>Policies and legal</span>
+        </a>
+        <a class="page-tab" data-nav-link href="support.html">
+          <strong>Support</strong>
+          <span>Report a problem</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <section class="page-hero shell">
+        <div class="page-hero-grid">
+          <div class="page-hero-copy" data-reveal>
+            <p class="eyebrow">Marketplace</p>
+            <h1>Find the nearest mechanic with road-aware pricing.</h1>
+            <p class="lead">
+              MechGo ranks mobile mechanics by proximity, specialty, and urgency, then
+              adjusts quotes using distance, time of day, and current weather pressure.
+            </p>
+
+            <div class="hero-actions">
+              <a class="primary-button" href="#marketplace">See live matches</a>
+              <a class="text-link" href="dispatch.html">Go to dispatch board</a>
+            </div>
+
+            <div class="page-stat-grid">
+              <article data-interactive-surface>
+                <span>GPS priority</span>
+                <strong>Closest mechanics rise to the top when location is on.</strong>
+              </article>
+              <article data-interactive-surface>
+                <span>Dynamic estimates</span>
+                <strong>Travel, demand, and weather all shape the roadside quote.</strong>
+              </article>
+              <article data-interactive-surface>
+                <span>Urgency filters</span>
+                <strong>Switch between emergency, same-day, and scheduled jobs.</strong>
+              </article>
+              <article data-interactive-surface>
+                <span>Booking handoff</span>
+                <strong>Select a mechanic and confirm details inside the booking panel.</strong>
+              </article>
+            </div>
+          </div>
+
+          <div class="page-hero-side">
+            <div class="hero-console" id="heroCommandCenter">
+              <div class="console-header">
+                <span class="status-pill status-pill-alt">Live matching</span>
+                <span class="console-live">Roadside routing online</span>
+              </div>
+
+              <div class="console-grid">
+                <article>
+                  <span>Matching mode</span>
+                  <strong id="commandCenterMode">Manual city mode</strong>
+                </article>
+                <article>
+                  <span>Road conditions</span>
+                  <strong id="commandCenterWeather">Syncing environment</strong>
+                </article>
+                <article>
+                  <span>Coverage</span>
+                  <strong id="commandCenterCoverage">Network loading</strong>
+                </article>
+                <article>
+                  <span>Dispatch tempo</span>
+                  <strong id="commandCenterTempo">Standard daytime dispatch</strong>
+                </article>
+              </div>
+            </div>
+
+            <div class="page-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>What this tab solves</h3>
+                <span class="status-pill">Roadside triage</span>
+              </div>
+              <p>
+                Instead of calling random repair shops, drivers can compare who is mobile,
+                who is available, and who is closest before committing to a booking.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="marketplace shell" id="marketplace">
+        <div class="section-copy">
+          <p class="eyebrow">Mechanic marketplace</p>
+          <h2>Compare local mobile mechanics before you book.</h2>
+          <p class="section-note">
+            Results update instantly based on your issue, location, urgency, and live
+            pricing conditions.
+          </p>
+        </div>
+
+        <div class="marketplace-layout">
+          <aside class="filter-panel">
+            <form id="filterForm" class="stack-form">
+              <label>
+                City
+                <input id="cityFilter" name="cityFilter" type="text" placeholder="Search city" />
+              </label>
+
+              <label>
+                Service needed
+                <select id="issueFilter" name="issueFilter">
+                  <option value="all">All services</option>
+                  <option value="battery">Battery</option>
+                  <option value="tire">Tire</option>
+                  <option value="brakes">Brakes</option>
+                  <option value="engine">Engine</option>
+                  <option value="diagnostic">Diagnostic</option>
+                </select>
+              </label>
+
+              <label>
+                Availability
+                <select id="urgencyFilter" name="urgencyFilter">
+                  <option value="all">Any time</option>
+                  <option value="emergency">Emergency now</option>
+                  <option value="today">Today</option>
+                  <option value="scheduled">Scheduled</option>
+                </select>
+              </label>
+
+              <button class="secondary-button" type="submit">Update matches</button>
+            </form>
+
+            <div class="location-panel">
+              <div class="location-panel-top">
+                <div>
+                  <h3>Live GPS matching</h3>
+                  <p id="locationStatus">
+                    GPS is off. Turn it on to rank mechanics by who is closest to you.
+                  </p>
+                </div>
+                <span class="status-pill" id="locationModeBadge">Manual city mode</span>
+              </div>
+
+              <p class="location-meta" id="locationMeta">
+                City search stays active until you allow browser location access.
+              </p>
+              <p class="pricing-signal" id="pricingSignal">
+                Quotes react to distance, time of day, and local roadside weather.
+              </p>
+
+              <div class="location-actions">
+                <button class="secondary-button" id="locateUserButton" type="button">
+                  Use live GPS
+                </button>
+                <button class="ghost-button" id="clearLocationButton" type="button">
+                  Stop GPS
+                </button>
+              </div>
+            </div>
+
+            <div class="safety-panel">
+              <h3>Roadside checklist</h3>
+              <ul>
+                <li>Move to a safe shoulder if the car can still roll.</li>
+                <li>Turn on hazards and add a landmark in the booking notes.</li>
+                <li>Stay inside the vehicle if traffic conditions are dangerous.</li>
+              </ul>
+            </div>
+          </aside>
+
+          <div class="results-panel">
+            <div class="results-bar">
+              <p id="resultsSummary">Loading nearby mechanics...</p>
+              <span class="status-pill status-pill-alt">Verified mobile pros</span>
+            </div>
+            <div id="mechanicGrid" class="mechanic-grid" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="how shell">
+        <div class="section-copy">
+          <p class="eyebrow">Booking flow</p>
+          <h2>From roadside issue to confirmed mechanic in three steps.</h2>
+        </div>
+
+        <div class="how-grid">
+          <article data-interactive-surface>
+            <span>1</span>
+            <h3>Set your location</h3>
+            <p>Use your city or live GPS so MechGo can rank mechanics by practical response distance.</p>
+          </article>
+          <article data-interactive-surface>
+            <span>2</span>
+            <h3>Compare real quotes</h3>
+            <p>See how weather, distance, and time pressure affect the callout estimate before booking.</p>
+          </article>
+          <article data-interactive-surface>
+            <span>3</span>
+            <h3>Confirm the roadside job</h3>
+            <p>Lock in the mechanic, service type, location, and notes in a focused booking modal.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <div class="modal hidden" id="bookingModal" aria-hidden="true">
+      <div class="modal-backdrop" data-close-modal="true"></div>
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
+        <button class="modal-close" id="closeModalButton" type="button" aria-label="Close booking panel">
+          &times;
+        </button>
+
+        <div class="modal-header">
+          <p class="eyebrow">Complete booking</p>
+          <h2 id="bookingTitle">Reserve roadside help</h2>
+          <p id="bookingSubtitle">Mechanic details will appear here.</p>
+        </div>
+
+        <form id="bookingForm" class="booking-form">
+          <input id="selectedMechanicId" name="selectedMechanicId" type="hidden" />
+
+          <div class="form-grid">
+            <label>
+              Your name
+              <input id="customerName" name="customerName" type="text" placeholder="Jordan Rivera" required />
+            </label>
+
+            <label>
+              Phone number
+              <input id="customerPhone" name="customerPhone" type="tel" placeholder="(555) 321-9876" required />
+            </label>
+
+            <label>
+              Vehicle
+              <input id="vehicleInfo" name="vehicleInfo" type="text" placeholder="2019 Honda CR-V" required />
+            </label>
+
+            <label>
+              Service requested
+              <select id="serviceType" name="serviceType">
+                <option value="battery">Battery service</option>
+                <option value="tire">Tire repair</option>
+                <option value="brakes">Brake repair</option>
+                <option value="engine">Engine support</option>
+                <option value="diagnostic">Diagnostic</option>
+              </select>
+            </label>
+          </div>
+
+          <label>
+            Exact roadside location
+            <input
+              id="breakdownLocation"
+              name="breakdownLocation"
+              type="text"
+              placeholder="I-35 North near Exit 248, Austin, TX"
+              required
+            />
+          </label>
+
+          <label>
+            Notes for the mechanic
+            <textarea
+              id="repairNotes"
+              name="repairNotes"
+              rows="4"
+              placeholder="Car lost power after a gas stop. Battery light is on and I'm parked on the shoulder."
+            ></textarea>
+          </label>
+
+          <div class="booking-summary" id="bookingSummary"></div>
+
+          <button class="primary-button" type="submit">Confirm booking</button>
+        </form>
+      </div>
+    </div>
+
+    <template id="mechanicCardTemplate">
+      <article class="mechanic-card">
+        <div class="mechanic-topline">
+          <div>
+            <p class="mechanic-city"></p>
+            <h3 class="mechanic-name"></h3>
+          </div>
+          <span class="eta-badge"></span>
+        </div>
+
+        <p class="mechanic-blurb"></p>
+
+        <div class="mechanic-meta">
+          <span class="rating-pill"></span>
+          <span class="price-pill"></span>
+          <span class="jobs-pill"></span>
+        </div>
+
+        <p class="pricing-note"></p>
+
+        <div class="skill-row"></div>
+
+        <div class="mechanic-footer">
+          <div class="status-copy">
+            <strong class="availability-label"></strong>
+            <small class="distance-label"></small>
+          </div>
+          <button class="secondary-button book-button" type="button">Book now</button>
+        </div>
+      </article>
+    </template>
+
+    <nav class="tab-dock" aria-label="MechGo mobile navigation">
+      <a data-nav-link href="dashboard.html">
+        <strong>Dash</strong>
+        <span>Center</span>
+      </a>
+      <a data-nav-link href="marketplace.html">
+        <strong>Market</strong>
+        <span>Nearby pros</span>
+      </a>
+      <a data-nav-link href="dispatch.html">
+        <strong>Dispatch</strong>
+        <span>Live jobs</span>
+      </a>
+      <a data-nav-link href="customers.html">
+        <strong>Acct</strong>
+        <span>Drivers</span>
+      </a>
+      <a data-nav-link href="mechanics.html">
+        <strong>Mechs</strong>
+        <span>Network</span>
+      </a>
+      <a data-nav-link href="settings.html">
+        <strong>Prefs</strong>
+        <span>Settings</span>
+      </a>
+      <a data-nav-link href="download-app.html">
+        <strong>App</strong>
+        <span>Mobile</span>
+      </a>
+      <a data-nav-link href="terms.html">
+        <strong>Terms</strong>
+        <span>Legal</span>
+      </a>
+      <a data-nav-link href="support.html">
+        <strong>Support</strong>
+        <span>Help</span>
+      </a>
+    </nav>
+
+    <script src="api-client.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

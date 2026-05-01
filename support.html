@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>MechGo Support | Report A Problem</title>
+    <meta
+      name="description"
+      content="Report service problems, billing issues, safety concerns, or app bugs through the MechGo support center."
+    />
+    <meta name="theme-color" content="#ff8a3d" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="site.webmanifest" />
+  </head>
+  <body class="has-tab-dock" data-page="support">
+    <div class="bg-orb bg-orb-one"></div>
+    <div class="bg-orb bg-orb-two"></div>
+    <div class="grid-overlay"></div>
+
+    <header class="site-header shell">
+      <nav class="topbar">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">M</span>
+          <span>
+            <strong>MechGo</strong>
+            <small>Roadside mechanics on demand</small>
+          </span>
+        </a>
+
+        <div class="nav-actions">
+          <a data-nav-link href="terms.html">Terms</a>
+          <a data-nav-link href="support.html">Support</a>
+          <a data-nav-link href="download-app.html">Get app</a>
+          <a class="secondary-button nav-auth-link" data-auth-link data-nav-link href="signin.html">Sign in</a>
+          <a class="ghost-button nav-cta" href="#supportCenter">Open support</a>
+        </div>
+      </nav>
+
+      <div class="page-tabs" aria-label="MechGo sections">
+        <a class="page-tab" data-nav-link href="signin.html">
+          <strong>Sign In</strong>
+          <span>Customer or mechanic access</span>
+        </a>
+        <a class="page-tab" data-nav-link href="download-app.html">
+          <strong>App</strong>
+          <span>iPhone and Android</span>
+        </a>
+        <a class="page-tab" data-nav-link href="terms.html">
+          <strong>Terms</strong>
+          <span>Policies and legal</span>
+        </a>
+        <a class="page-tab" data-nav-link href="support.html">
+          <strong>Support</strong>
+          <span>Report a problem</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <section class="page-hero shell">
+        <div class="page-hero-grid">
+          <div class="page-hero-copy" data-reveal>
+            <p class="eyebrow">Support center</p>
+            <h1>Report problems with the service in a useful, structured way.</h1>
+            <p class="lead">
+              MechGo now has a dedicated support tab for customers and mechanics to flag
+              app bugs, booking issues, billing problems, safety incidents, or service disputes.
+            </p>
+
+            <div class="hero-actions">
+              <a class="primary-button" href="#supportCenter">Open support center</a>
+              <a class="text-link" href="terms.html">Review policies</a>
+            </div>
+
+            <div class="page-stat-grid">
+              <article data-interactive-surface>
+                <span>Useful routing</span>
+                <strong>Reports can be categorized by billing, booking, safety, app bug, or mechanic behavior.</strong>
+              </article>
+              <article data-interactive-surface>
+                <span>Logged history</span>
+                <strong>Submitted reports stay visible in a local support queue so issues do not disappear.</strong>
+              </article>
+              <article data-interactive-surface>
+                <span>Account-aware</span>
+                <strong>Signed-in users get their contact details and role prefilled automatically.</strong>
+              </article>
+              <article data-interactive-surface>
+                <span>Booking tie-in</span>
+                <strong>Drivers and mechanics can attach a booking reference when the issue is tied to a job.</strong>
+              </article>
+            </div>
+          </div>
+
+          <div class="page-hero-side">
+            <div class="page-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>When to use this</h3>
+                <span class="status-pill">Support workflows</span>
+              </div>
+              <p>
+                Use this tab when something went wrong in the app, a job had a dispute,
+                a charge looked incorrect, or a safety event needs to be documented.
+              </p>
+            </div>
+
+            <div class="page-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Professional touch</h3>
+                <span class="status-pill status-pill-alt">Marketplace ready</span>
+              </div>
+              <p>
+                A real service marketplace needs a clear support lane. This gives MechGo
+                a more complete product feel than just booking and dispatch alone.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="support-shell shell" id="supportCenter">
+        <div class="section-copy">
+          <p class="eyebrow">Report a problem</p>
+          <h2>Send clear issues into the MechGo support queue.</h2>
+          <p class="section-note">
+            Include as much detail as possible so the marketplace issue is easier to
+            understand, reproduce, and resolve.
+          </p>
+        </div>
+
+        <div class="customer-area-layout">
+          <div class="customer-primary">
+            <div class="customer-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Support intake form</h3>
+                <span class="status-pill">Structured reporting</span>
+              </div>
+
+              <form id="problemReportForm" class="stack-form">
+                <div class="form-grid">
+                  <label>
+                    Your name
+                    <input id="reportName" name="reportName" type="text" placeholder="Jordan Rivera" required />
+                  </label>
+
+                  <label>
+                    Email address
+                    <input
+                      id="reportEmail"
+                      name="reportEmail"
+                      type="email"
+                      placeholder="jordan@email.com"
+                      required
+                    />
+                  </label>
+
+                  <label>
+                    User type
+                    <select id="reportUserType" name="reportUserType">
+                      <option value="customer">Customer</option>
+                      <option value="mechanic">Mechanic</option>
+                      <option value="guest">Guest</option>
+                    </select>
+                  </label>
+
+                  <label>
+                    Category
+                    <select id="reportCategory" name="reportCategory">
+                      <option value="booking">Booking issue</option>
+                      <option value="billing">Billing or refund</option>
+                      <option value="safety">Safety concern</option>
+                      <option value="behavior">Mechanic or customer behavior</option>
+                      <option value="bug">App bug</option>
+                      <option value="verification">Verification issue</option>
+                    </select>
+                  </label>
+
+                  <label>
+                    Subject
+                    <input
+                      id="reportSubject"
+                      name="reportSubject"
+                      type="text"
+                      placeholder="Charged after job was canceled"
+                      required
+                    />
+                  </label>
+
+                  <label>
+                    Booking reference
+                    <input
+                      id="reportBookingId"
+                      name="reportBookingId"
+                      type="text"
+                      placeholder="job-1743829012345"
+                    />
+                  </label>
+
+                  <label>
+                    Severity
+                    <select id="reportSeverity" name="reportSeverity">
+                      <option value="low">Low</option>
+                      <option value="medium" selected>Medium</option>
+                      <option value="high">High</option>
+                      <option value="critical">Critical</option>
+                    </select>
+                  </label>
+
+                  <label>
+                    Preferred follow-up
+                    <select id="reportContactMethod" name="reportContactMethod">
+                      <option value="email">Email</option>
+                      <option value="phone">Phone</option>
+                      <option value="text">Text</option>
+                    </select>
+                  </label>
+                </div>
+
+                <label>
+                  Full issue details
+                  <textarea
+                    id="reportDescription"
+                    name="reportDescription"
+                    rows="6"
+                    placeholder="Describe exactly what happened, when it happened, who was involved, and what outcome you expect."
+                    required
+                  ></textarea>
+                </label>
+
+                <button class="primary-button" type="submit">Submit report</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="customer-side">
+            <div class="customer-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Support queue</h3>
+                <span id="reportCount">0 reports</span>
+              </div>
+              <div id="reportList" class="payment-method-list"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <template id="reportCardTemplate">
+      <article class="payment-card" data-interactive-surface>
+        <div class="payment-card-header">
+          <div>
+            <p class="report-card-status payment-card-type"></p>
+            <h3 class="report-card-title payment-card-label"></h3>
+          </div>
+          <span class="payment-card-badge">Support ticket</span>
+        </div>
+        <p class="report-card-meta payment-card-meta"></p>
+        <p class="report-card-contact payment-card-zip"></p>
+        <p class="report-card-body customer-panel-copy"></p>
+        <p class="report-card-ticket payment-card-zip"></p>
+      </article>
+    </template>
+
+    <nav class="tab-dock" aria-label="MechGo mobile navigation">
+      <a data-nav-link href="signin.html">
+        <strong>Sign In</strong>
+        <span>Access</span>
+      </a>
+      <a data-nav-link href="download-app.html">
+        <strong>App</strong>
+        <span>Mobile</span>
+      </a>
+      <a data-nav-link href="terms.html">
+        <strong>Terms</strong>
+        <span>Legal</span>
+      </a>
+      <a data-nav-link href="support.html">
+        <strong>Support</strong>
+        <span>Help</span>
+      </a>
+    </nav>
+
+    <script src="api-client.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

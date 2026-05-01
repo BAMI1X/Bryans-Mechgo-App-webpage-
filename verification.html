@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>MechGo Verification | Driver Registration</title>
+    <meta
+      name="description"
+      content="Create a MechGo driver profile and upload roadside verification documents before you need help."
+    />
+    <meta name="theme-color" content="#ff8a3d" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="site.webmanifest" />
+  </head>
+  <body class="has-tab-dock" data-page="verification">
+    <div class="bg-orb bg-orb-one"></div>
+    <div class="bg-orb bg-orb-two"></div>
+    <div class="grid-overlay"></div>
+
+    <header class="site-header shell">
+      <nav class="topbar">
+        <a class="brand" href="dashboard.html">
+          <span class="brand-mark">M</span>
+          <span>
+            <strong>MechGo</strong>
+            <small>Roadside mechanics on demand</small>
+          </span>
+        </a>
+
+        <div class="nav-actions">
+          <a data-nav-link href="dashboard.html">Dashboard</a>
+          <a data-nav-link href="marketplace.html">Marketplace</a>
+          <a data-nav-link href="dispatch.html">Dispatch</a>
+          <a data-nav-link href="customers.html">Customers</a>
+          <a data-nav-link href="mechanics.html">Mechanics</a>
+          <a data-nav-link href="settings.html">Settings</a>
+          <a data-nav-link href="verification.html">Verification</a>
+          <a data-nav-link href="terms.html">Terms</a>
+          <a data-nav-link href="support.html">Support</a>
+          <a data-nav-link href="download-app.html">Get app</a>
+          <a class="secondary-button nav-auth-link" data-auth-link data-nav-link href="signin.html">Sign in</a>
+          <a class="ghost-button nav-cta" href="#driverVerification">Register driver</a>
+        </div>
+      </nav>
+
+      <div class="page-tabs" aria-label="MechGo sections">
+        <a class="page-tab" data-nav-link href="dashboard.html">
+          <strong>Dashboard</strong>
+          <span>Logged-in control center</span>
+        </a>
+        <a class="page-tab" data-nav-link href="marketplace.html">
+          <strong>Marketplace</strong>
+          <span>Nearest mechanics</span>
+        </a>
+        <a class="page-tab" data-nav-link href="dispatch.html">
+          <strong>Dispatch</strong>
+          <span>Track active jobs</span>
+        </a>
+        <a class="page-tab" data-nav-link href="customers.html">
+          <strong>Customers</strong>
+          <span>Accounts and billing</span>
+        </a>
+        <a class="page-tab" data-nav-link href="mechanics.html">
+          <strong>Mechanics</strong>
+          <span>Operator network</span>
+        </a>
+        <a class="page-tab" data-nav-link href="settings.html">
+          <strong>Settings</strong>
+          <span>Verification and preferences</span>
+        </a>
+        <a class="page-tab" data-nav-link href="verification.html">
+          <strong>Verification</strong>
+          <span>Driver document review</span>
+        </a>
+        <a class="page-tab" data-nav-link href="terms.html">
+          <strong>Terms</strong>
+          <span>Policies and legal</span>
+        </a>
+        <a class="page-tab" data-nav-link href="support.html">
+          <strong>Support</strong>
+          <span>Report a problem</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <section class="page-hero shell">
+        <div class="page-hero-grid">
+          <div class="page-hero-copy" data-reveal>
+            <p class="eyebrow">Verification</p>
+            <h1>Register drivers before the next breakdown happens.</h1>
+            <p class="lead">
+              MechGo lets drivers create a pre-verified profile by uploading identity,
+              vehicle, and insurance documents into a dedicated review queue.
+            </p>
+
+            <div class="hero-actions">
+              <a class="primary-button" href="#driverVerification">Start verification</a>
+              <a class="text-link" href="terms.html">Review platform terms</a>
+            </div>
+
+            <div class="page-stat-grid">
+              <article data-interactive-surface>
+                <span>Driver identity</span>
+                <strong>Store license details before a stressful roadside emergency.</strong>
+              </article>
+              <article data-interactive-surface>
+                <span>Vehicle trust</span>
+                <strong>Registration and insurance docs help confirm ownership fast.</strong>
+              </article>
+              <article data-interactive-surface>
+                <span>Queue visibility</span>
+                <strong>Every submission appears instantly in the local review board.</strong>
+              </article>
+              <article data-interactive-surface>
+                <span>Dispatch support</span>
+                <strong>Pre-filled driver context can speed up future roadside bookings.</strong>
+              </article>
+            </div>
+          </div>
+
+          <div class="page-hero-side">
+            <div class="page-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Why it matters</h3>
+                <span class="status-pill">Trust layer</span>
+              </div>
+              <p>
+                When a mechanic is driving out to a stranded vehicle, verified driver and
+                vehicle records add confidence before arrival and reduce fraud risk.
+              </p>
+            </div>
+
+            <div class="page-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Required uploads</h3>
+                <span class="status-pill status-pill-alt">3 documents</span>
+              </div>
+              <div class="page-panel-list">
+                <article>
+                  <strong>License</strong>
+                  <span>Identity confirmation for the driver profile.</span>
+                </article>
+                <article>
+                  <strong>Registration</strong>
+                  <span>Vehicle association to the account.</span>
+                </article>
+                <article>
+                  <strong>Insurance</strong>
+                  <span>Coverage proof for roadside operations.</span>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="verification shell" id="driverVerification">
+        <div class="section-copy">
+          <p class="eyebrow">Driver verification</p>
+          <h2>Let drivers register and upload documents before they need help.</h2>
+          <p class="section-note">
+            Verified driver profiles can speed up roadside dispatch by confirming identity,
+            vehicle ownership, and coverage before a mechanic is assigned.
+          </p>
+        </div>
+
+        <div class="verification-layout">
+          <div class="verification-panel">
+            <div class="panel-heading">
+              <h3>Create a verified driver profile</h3>
+              <span class="status-pill">Upload documents</span>
+            </div>
+
+            <form id="driverVerificationForm" class="stack-form">
+              <div class="form-grid">
+                <label>
+                  Full name
+                  <input
+                    id="driverFullName"
+                    name="driverFullName"
+                    type="text"
+                    placeholder="Jordan Rivera"
+                    required
+                  />
+                </label>
+
+                <label>
+                  Email address
+                  <input
+                    id="driverEmail"
+                    name="driverEmail"
+                    type="email"
+                    placeholder="jordan@email.com"
+                    required
+                  />
+                </label>
+
+                <label>
+                  Phone number
+                  <input
+                    id="driverPhone"
+                    name="driverPhone"
+                    type="tel"
+                    placeholder="(555) 321-9876"
+                    required
+                  />
+                </label>
+
+                <label>
+                  Vehicle
+                  <input
+                    id="driverVehicle"
+                    name="driverVehicle"
+                    type="text"
+                    placeholder="2019 Honda CR-V"
+                    required
+                  />
+                </label>
+              </div>
+
+              <label>
+                Home city
+                <input
+                  id="driverHomeCity"
+                  name="driverHomeCity"
+                  type="text"
+                  placeholder="Austin, TX"
+                  required
+                />
+              </label>
+
+              <div class="upload-grid">
+                <label class="upload-field">
+                  Driver's license
+                  <input
+                    id="licenseUpload"
+                    name="licenseUpload"
+                    type="file"
+                    accept=".pdf,.jpg,.jpeg,.png"
+                    required
+                  />
+                  <small>Accepted: PDF, JPG, PNG</small>
+                </label>
+
+                <label class="upload-field">
+                  Vehicle registration
+                  <input
+                    id="registrationUpload"
+                    name="registrationUpload"
+                    type="file"
+                    accept=".pdf,.jpg,.jpeg,.png"
+                    required
+                  />
+                  <small>Accepted: PDF, JPG, PNG</small>
+                </label>
+
+                <label class="upload-field">
+                  Insurance card
+                  <input
+                    id="insuranceUpload"
+                    name="insuranceUpload"
+                    type="file"
+                    accept=".pdf,.jpg,.jpeg,.png"
+                    required
+                  />
+                  <small>Accepted: PDF, JPG, PNG</small>
+                </label>
+              </div>
+
+              <div class="doc-preview" id="driverDocSummary">
+                No files selected yet. Uploaded document names will appear here for review.
+              </div>
+
+              <button class="primary-button" type="submit">Submit for verification</button>
+            </form>
+          </div>
+
+          <div class="verification-side">
+            <div class="verification-panel">
+              <div class="panel-heading">
+                <h3>Verification queue</h3>
+                <span id="verificationCount">0 submissions</span>
+              </div>
+              <div id="verificationList" class="verification-list"></div>
+            </div>
+
+            <div class="verification-panel accent-panel">
+              <div class="panel-heading">
+                <h3>Why verify drivers?</h3>
+              </div>
+              <p>
+                It reduces fake roadside calls, gives mechanics better confidence before
+                showing up, and helps support confirm vehicle ownership faster if a trip
+                breaks down far from home.
+              </p>
+              <div class="impact-metrics">
+                <article>
+                  <strong>Safer arrival</strong>
+                  <span>identity checked in advance</span>
+                </article>
+                <article>
+                  <strong>Faster dispatch</strong>
+                  <span>documents already on file</span>
+                </article>
+                <article>
+                  <strong>Less fraud</strong>
+                  <span>vehicle and coverage verified</span>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="how shell">
+        <div class="section-copy">
+          <p class="eyebrow">Review flow</p>
+          <h2>How the driver verification tab works.</h2>
+        </div>
+
+        <div class="how-grid">
+          <article data-interactive-surface>
+            <span>1</span>
+            <h3>Create the profile</h3>
+            <p>Capture the driver's contact information, vehicle details, and home city in one form.</p>
+          </article>
+          <article data-interactive-surface>
+            <span>2</span>
+            <h3>Upload the proof</h3>
+            <p>Attach license, registration, and insurance files so the roadside profile is complete.</p>
+          </article>
+          <article data-interactive-surface>
+            <span>3</span>
+            <h3>Queue for review</h3>
+            <p>Submissions appear instantly in the verification queue and persist locally across refreshes.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <template id="verificationCardTemplate">
+      <article class="verification-card">
+        <div class="verification-card-header">
+          <div>
+            <p class="verification-status"></p>
+            <h3 class="verification-name"></h3>
+          </div>
+          <span class="verification-time"></span>
+        </div>
+        <p class="verification-vehicle"></p>
+        <p class="verification-contact"></p>
+        <div class="verification-docs"></div>
+      </article>
+    </template>
+
+    <nav class="tab-dock" aria-label="MechGo mobile navigation">
+      <a data-nav-link href="dashboard.html">
+        <strong>Dash</strong>
+        <span>Center</span>
+      </a>
+      <a data-nav-link href="marketplace.html">
+        <strong>Market</strong>
+        <span>Nearby pros</span>
+      </a>
+      <a data-nav-link href="dispatch.html">
+        <strong>Dispatch</strong>
+        <span>Live jobs</span>
+      </a>
+      <a data-nav-link href="customers.html">
+        <strong>Acct</strong>
+        <span>Drivers</span>
+      </a>
+      <a data-nav-link href="mechanics.html">
+        <strong>Mechs</strong>
+        <span>Network</span>
+      </a>
+      <a data-nav-link href="settings.html">
+        <strong>Prefs</strong>
+        <span>Settings</span>
+      </a>
+      <a data-nav-link href="verification.html">
+        <strong>Verify</strong>
+        <span>Docs</span>
+      </a>
+      <a data-nav-link href="terms.html">
+        <strong>Terms</strong>
+        <span>Legal</span>
+      </a>
+      <a data-nav-link href="support.html">
+        <strong>Support</strong>
+        <span>Help</span>
+      </a>
+    </nav>
+
+    <script src="api-client.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

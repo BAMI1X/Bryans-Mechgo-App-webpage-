@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>MechGo Dispatch | Active Roadside Jobs</title>
+    <meta
+      name="description"
+      content="Track active MechGo roadside jobs, ETA timelines, and saved booking details in a dedicated dispatch board."
+    />
+    <meta name="theme-color" content="#ff8a3d" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="site.webmanifest" />
+  </head>
+  <body class="has-tab-dock" data-page="dispatch">
+    <div class="bg-orb bg-orb-one"></div>
+    <div class="bg-orb bg-orb-two"></div>
+    <div class="grid-overlay"></div>
+
+    <header class="site-header shell">
+      <nav class="topbar">
+        <a class="brand" href="dashboard.html">
+          <span class="brand-mark">M</span>
+          <span>
+            <strong>MechGo</strong>
+            <small>Roadside mechanics on demand</small>
+          </span>
+        </a>
+
+        <div class="nav-actions">
+          <a data-nav-link href="dashboard.html">Dashboard</a>
+          <a data-nav-link href="marketplace.html">Marketplace</a>
+          <a data-nav-link href="dispatch.html">Dispatch</a>
+          <a data-nav-link href="customers.html">Customers</a>
+          <a data-nav-link href="mechanics.html">Mechanics</a>
+          <a data-nav-link href="settings.html">Settings</a>
+          <a data-nav-link href="terms.html">Terms</a>
+          <a data-nav-link href="support.html">Support</a>
+          <a data-nav-link href="download-app.html">Get app</a>
+          <a class="secondary-button nav-auth-link" data-auth-link data-nav-link href="signin.html">Sign in</a>
+          <a class="ghost-button nav-cta" href="#dispatchBoard">Open dispatch</a>
+        </div>
+      </nav>
+
+      <div class="page-tabs" aria-label="MechGo sections">
+        <a class="page-tab" data-nav-link href="dashboard.html">
+          <strong>Dashboard</strong>
+          <span>Logged-in control center</span>
+        </a>
+        <a class="page-tab" data-nav-link href="marketplace.html">
+          <strong>Marketplace</strong>
+          <span>Nearest mechanics</span>
+        </a>
+        <a class="page-tab" data-nav-link href="dispatch.html">
+          <strong>Dispatch</strong>
+          <span>Track active jobs</span>
+        </a>
+        <a class="page-tab" data-nav-link href="customers.html">
+          <strong>Customers</strong>
+          <span>Accounts and billing</span>
+        </a>
+        <a class="page-tab" data-nav-link href="mechanics.html">
+          <strong>Mechanics</strong>
+          <span>Operator network</span>
+        </a>
+        <a class="page-tab" data-nav-link href="settings.html">
+          <strong>Settings</strong>
+          <span>Verification and preferences</span>
+        </a>
+        <a class="page-tab" data-nav-link href="download-app.html">
+          <strong>App</strong>
+          <span>Mobile download</span>
+        </a>
+        <a class="page-tab" data-nav-link href="terms.html">
+          <strong>Terms</strong>
+          <span>Policies and legal</span>
+        </a>
+        <a class="page-tab" data-nav-link href="support.html">
+          <strong>Support</strong>
+          <span>Report a problem</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <section class="page-hero shell">
+        <div class="page-hero-grid">
+          <div class="page-hero-copy" data-reveal>
+            <p class="eyebrow">Dispatch</p>
+            <h1>Keep every roadside booking visible after the match.</h1>
+            <p class="lead">
+              The dispatch tab gives drivers a persistent place to see active jobs, ETA
+              steps, and locked estimates after a mechanic has been booked.
+            </p>
+
+            <div class="hero-actions">
+              <a class="primary-button" href="#dispatchBoard">Open active jobs</a>
+              <a class="text-link" href="marketplace.html">Book another mechanic</a>
+            </div>
+
+            <div class="page-stat-grid">
+              <article data-interactive-surface>
+                <span>Saved jobs</span>
+                <strong>Bookings persist locally so the dispatch board survives refreshes.</strong>
+              </article>
+              <article data-interactive-surface>
+                <span>Clear next steps</span>
+                <strong>Timeline chips show whether the job is assigned, en route, or active.</strong>
+              </article>
+              <article data-interactive-surface>
+                <span>Traveler confidence</span>
+                <strong>Drivers no longer lose context after closing the booking modal.</strong>
+              </article>
+              <article data-interactive-surface>
+                <span>Operational view</span>
+                <strong>The board reinforces that MechGo works like a real dispatch platform.</strong>
+              </article>
+            </div>
+          </div>
+
+          <div class="page-hero-side">
+            <div class="page-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Board purpose</h3>
+                <span class="status-pill status-pill-alt">Command view</span>
+              </div>
+              <p>
+                When people break down while traveling, uncertainty becomes part of the
+                problem. The dispatch board answers the simplest question fast: what is
+                happening with my request right now?
+              </p>
+            </div>
+
+            <div class="page-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Best paired with</h3>
+                <span class="status-pill">Marketplace</span>
+              </div>
+              <div class="page-panel-list">
+                <article>
+                  <strong>Marketplace tab</strong>
+                  <span>Book the mechanic and lock the quote.</span>
+                </article>
+                <article>
+                  <strong>Verification tab</strong>
+                  <span>Store the driver's records in advance.</span>
+                </article>
+                <article>
+                  <strong>Terms tab</strong>
+                  <span>Review the platform rules that govern bookings.</span>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dispatch shell" id="dispatchBoard">
+        <div class="section-copy">
+          <p class="eyebrow">Dispatch board</p>
+          <h2>Saved bookings stay visible so travelers know what's happening next.</h2>
+        </div>
+
+        <div class="dispatch-layout">
+          <div class="dispatch-column">
+            <div class="panel-heading">
+              <h3>Active roadside requests</h3>
+              <span id="bookingCount">0 jobs</span>
+            </div>
+            <div id="bookingList" class="booking-list"></div>
+          </div>
+
+          <div class="dispatch-column accent-panel">
+            <div class="panel-heading">
+              <h3>Why this solves a real problem</h3>
+            </div>
+            <p>
+              When cars break down during a trip, people often don't know which shops
+              are mobile, trustworthy, or even open. MechGo turns that chaotic search
+              into one simple booking flow with clearer next steps.
+            </p>
+            <div class="impact-metrics">
+              <article>
+                <strong>1 platform</strong>
+                <span>instead of multiple calls</span>
+              </article>
+              <article>
+                <strong>Faster triage</strong>
+                <span>based on the exact issue</span>
+              </article>
+              <article>
+                <strong>Traveler friendly</strong>
+                <span>works far from home shops</span>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="how shell">
+        <div class="section-copy">
+          <p class="eyebrow">Dispatch flow</p>
+          <h2>What drivers can read from the board at a glance.</h2>
+        </div>
+
+        <div class="how-grid">
+          <article data-interactive-surface>
+            <span>1</span>
+            <h3>Who is coming</h3>
+            <p>Each card keeps the selected mechanic, vehicle context, and roadside location visible.</p>
+          </article>
+          <article data-interactive-surface>
+            <span>2</span>
+            <h3>How soon</h3>
+            <p>ETA badges and urgency states make the timing expectations easier to understand.</p>
+          </article>
+          <article data-interactive-surface>
+            <span>3</span>
+            <h3>What was quoted</h3>
+            <p>Locked estimate details stay attached to the job instead of disappearing after booking.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <template id="bookingCardTemplate">
+      <article class="booking-card">
+        <div class="booking-card-header">
+          <div>
+            <p class="booking-status"></p>
+            <h3 class="booking-mechanic"></h3>
+          </div>
+          <span class="booking-eta"></span>
+        </div>
+        <p class="booking-service"></p>
+        <p class="booking-quote"></p>
+        <p class="booking-location"></p>
+        <div class="booking-timeline"></div>
+      </article>
+    </template>
+
+    <nav class="tab-dock" aria-label="MechGo mobile navigation">
+      <a data-nav-link href="dashboard.html">
+        <strong>Dash</strong>
+        <span>Center</span>
+      </a>
+      <a data-nav-link href="marketplace.html">
+        <strong>Market</strong>
+        <span>Nearby pros</span>
+      </a>
+      <a data-nav-link href="dispatch.html">
+        <strong>Dispatch</strong>
+        <span>Live jobs</span>
+      </a>
+      <a data-nav-link href="customers.html">
+        <strong>Acct</strong>
+        <span>Drivers</span>
+      </a>
+      <a data-nav-link href="mechanics.html">
+        <strong>Mechs</strong>
+        <span>Network</span>
+      </a>
+      <a data-nav-link href="settings.html">
+        <strong>Prefs</strong>
+        <span>Settings</span>
+      </a>
+      <a data-nav-link href="download-app.html">
+        <strong>App</strong>
+        <span>Mobile</span>
+      </a>
+      <a data-nav-link href="terms.html">
+        <strong>Terms</strong>
+        <span>Legal</span>
+      </a>
+      <a data-nav-link href="support.html">
+        <strong>Support</strong>
+        <span>Help</span>
+      </a>
+    </nav>
+
+    <script src="api-client.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

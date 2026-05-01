@@ -1,0 +1,17 @@
+{
+  "name": "MechGo",
+  "short_name": "MechGo",
+  "description": "Roadside mechanics on demand.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#08111f",
+  "theme_color": "#ff8a3d",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

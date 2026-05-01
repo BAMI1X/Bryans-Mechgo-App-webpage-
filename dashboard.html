@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>MechGo Dashboard | Logged In User Center</title>
+    <meta
+      name="description"
+      content="Access your logged-in MechGo dashboard for customer bookings, mechanic operations, legal docs, and support."
+    />
+    <meta name="theme-color" content="#ff8a3d" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="site.webmanifest" />
+  </head>
+  <body class="has-tab-dock" data-page="dashboard">
+    <div class="bg-orb bg-orb-one"></div>
+    <div class="bg-orb bg-orb-two"></div>
+    <div class="grid-overlay"></div>
+
+    <header class="site-header shell">
+      <nav class="topbar">
+        <a class="brand" href="dashboard.html">
+          <span class="brand-mark">M</span>
+          <span>
+            <strong>MechGo</strong>
+            <small>Roadside mechanics on demand</small>
+          </span>
+        </a>
+
+        <div class="nav-actions">
+          <a data-nav-link href="dashboard.html">Dashboard</a>
+          <a data-nav-link href="marketplace.html">Marketplace</a>
+          <a data-nav-link href="dispatch.html">Dispatch</a>
+          <a data-nav-link href="customers.html">Customers</a>
+          <a data-nav-link href="mechanics.html">Mechanics</a>
+          <a data-nav-link href="settings.html">Settings</a>
+          <a data-nav-link href="terms.html">Terms</a>
+          <a data-nav-link href="support.html">Support</a>
+          <a data-nav-link href="download-app.html">Get app</a>
+          <a class="secondary-button nav-auth-link" data-auth-link data-nav-link href="dashboard.html">@account</a>
+          <a class="ghost-button nav-cta" href="#dashboardCenter">Open dashboard</a>
+        </div>
+      </nav>
+
+      <div class="page-tabs" aria-label="MechGo sections">
+        <a class="page-tab" data-nav-link href="dashboard.html">
+          <strong>Dashboard</strong>
+          <span>Logged-in control center</span>
+        </a>
+        <a class="page-tab" data-nav-link href="marketplace.html">
+          <strong>Marketplace</strong>
+          <span>Nearest mechanics</span>
+        </a>
+        <a class="page-tab" data-nav-link href="dispatch.html">
+          <strong>Dispatch</strong>
+          <span>Track active jobs</span>
+        </a>
+        <a class="page-tab" data-nav-link href="customers.html">
+          <strong>Customers</strong>
+          <span>Accounts and billing</span>
+        </a>
+        <a class="page-tab" data-nav-link href="mechanics.html">
+          <strong>Mechanics</strong>
+          <span>Operator network</span>
+        </a>
+        <a class="page-tab" data-nav-link href="settings.html">
+          <strong>Settings</strong>
+          <span>Verification and preferences</span>
+        </a>
+        <a class="page-tab" data-nav-link href="download-app.html">
+          <strong>App</strong>
+          <span>Mobile download</span>
+        </a>
+        <a class="page-tab" data-nav-link href="terms.html">
+          <strong>Terms</strong>
+          <span>Policies and legal</span>
+        </a>
+        <a class="page-tab" data-nav-link href="support.html">
+          <strong>Support</strong>
+          <span>Report a problem</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <section class="page-hero shell">
+        <div class="page-hero-grid">
+          <div class="page-hero-copy" data-reveal>
+            <p class="eyebrow">Logged-in dashboard</p>
+            <h1 id="dashboardGreeting">Welcome to your MechGo user center.</h1>
+            <p class="lead" id="dashboardSessionMeta">
+              This page brings together the customer workspace, mechanic workspace,
+              support tools, and legal references in one post-login control center.
+            </p>
+
+            <div class="hero-actions">
+              <a class="primary-button" href="#dashboardCenter">Open account center</a>
+              <a class="text-link" href="marketplace.html">Back to marketplace</a>
+            </div>
+
+            <div class="page-stat-grid">
+              <article data-interactive-surface>
+                <span>Customer tools</span>
+                <strong>Review personal details, vehicles, payments, and roadside preferences.</strong>
+              </article>
+              <article data-interactive-surface>
+                <span>Mechanic tools</span>
+                <strong>Manage dispatch identity, coverage, credentials, and payment receiving setup.</strong>
+              </article>
+              <article data-interactive-surface>
+                <span>Support access</span>
+                <strong>Report booking problems, billing issues, safety concerns, and app bugs.</strong>
+              </article>
+              <article data-interactive-surface>
+                <span>Legal library</span>
+                <strong>Open policies, privacy terms, refunds, and contractor rules from one account center.</strong>
+              </article>
+            </div>
+          </div>
+
+          <div class="page-hero-side">
+            <div class="page-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Session status</h3>
+                <span class="status-pill" id="dashboardRoleBadge">Guest session</span>
+              </div>
+              <p id="dashboardPendingNotice">
+                Your saved workspaces, support options, and legal references live here after sign-in.
+              </p>
+              <div class="hero-actions">
+                <a class="secondary-button" id="dashboardContinueLink" href="marketplace.html">Open marketplace</a>
+                <button class="ghost-button" id="signOutButton" type="button">Log out</button>
+              </div>
+            </div>
+
+            <div class="page-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Logged-in account</h3>
+                <span class="status-pill status-pill-alt" id="dashboardThemeStatus">Dark mode active</span>
+              </div>
+              <div class="account-summary">
+                <strong id="dashboardAccountHandle">@account</strong>
+                <span id="dashboardAccountEmail">Sign in to load your account email and saved settings.</span>
+              </div>
+              <p id="dashboardAccountMeta">
+                Use settings to change your email, password, appearance mode, verification state,
+                and other logged-in account controls.
+              </p>
+              <div class="hero-actions">
+                <a class="secondary-button" href="settings.html">Open settings</a>
+                <button class="ghost-button" id="dashboardThemeToggle" type="button">Switch to light</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dashboard-shell shell" id="dashboardCenter">
+        <div class="section-copy">
+          <p class="eyebrow">User pages</p>
+          <h2>See the customer and mechanic sides of your MechGo account.</h2>
+          <p class="section-note">
+            Built more like a real marketplace account center, with shortcuts into the
+            profile pages people actually use after they sign in.
+          </p>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="customer-panel dashboard-card" data-interactive-surface>
+            <div class="panel-heading">
+              <h3>Customer workspace</h3>
+              <span class="status-pill status-pill-alt" id="dashboardCustomerStatus">Customer workspace</span>
+            </div>
+            <div class="customer-identity">
+              <strong id="dashboardCustomerName">Create a customer workspace</strong>
+            </div>
+            <p class="customer-panel-copy" id="dashboardCustomerMeta">
+              Set up personal details, address, vehicles, payment methods, and roadside preferences.
+            </p>
+            <div class="hero-actions">
+              <a class="secondary-button" id="dashboardCustomerLink" href="customers.html">Open customer page</a>
+              <a class="ghost-button" href="dispatch.html">View dispatch board</a>
+            </div>
+          </article>
+
+          <article class="customer-panel dashboard-card" data-interactive-surface>
+            <div class="panel-heading">
+              <h3>Mechanic workspace</h3>
+              <span class="status-pill" id="dashboardMechanicStatus">Mechanic workspace</span>
+            </div>
+            <div class="customer-identity">
+              <strong id="dashboardMechanicName">Create a mechanic workspace</strong>
+            </div>
+            <p class="customer-panel-copy" id="dashboardMechanicMeta">
+              Set up coverage, specialties, credentials, payment receiving methods, and operator readiness.
+            </p>
+            <div class="hero-actions">
+              <a class="secondary-button" id="dashboardMechanicLink" href="mechanics.html">Open mechanic page</a>
+              <a class="ghost-button" href="verification.html">Open verification</a>
+            </div>
+          </article>
+
+          <article class="customer-panel dashboard-card" data-interactive-surface>
+            <div class="panel-heading">
+              <h3>Support and safety</h3>
+              <span class="status-pill">Useful tools</span>
+            </div>
+            <p class="customer-panel-copy">
+              Report service issues, billing concerns, app bugs, or safety incidents in
+              a dedicated support queue built for the marketplace.
+            </p>
+            <div class="hero-actions">
+              <a class="secondary-button" href="support.html">Report a problem</a>
+              <a class="ghost-button" href="dispatch.html">Open dispatch board</a>
+            </div>
+          </article>
+
+          <article class="customer-panel dashboard-card" data-interactive-surface>
+            <div class="panel-heading">
+              <h3>Settings and verification</h3>
+              <span class="status-pill status-pill-alt">Account controls</span>
+            </div>
+            <p class="customer-panel-copy">
+              Verify your email, change your password, update your account email,
+              manage dark mode, control location-sharing settings, and tighten up security.
+            </p>
+            <div class="hero-actions">
+              <a class="secondary-button" href="settings.html">Open settings</a>
+              <a class="ghost-button" href="marketplace.html">Back to marketplace</a>
+            </div>
+          </article>
+
+          <article class="customer-panel dashboard-card" data-interactive-surface>
+            <div class="panel-heading">
+              <h3>Legal and policies</h3>
+              <span class="status-pill status-pill-alt">Read before booking</span>
+            </div>
+            <p class="customer-panel-copy">
+              Open Terms of Service, Privacy Policy, Refund and Cancellation rules,
+              Mechanic Agreement terms, and the Safety and Liability disclaimer.
+            </p>
+            <div class="hero-actions">
+              <a class="secondary-button" href="terms.html">Open policy center</a>
+              <a class="ghost-button" href="signin.html">Manage account access</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <nav class="tab-dock" aria-label="MechGo mobile navigation">
+      <a data-nav-link href="dashboard.html">
+        <strong>Dash</strong>
+        <span>Center</span>
+      </a>
+      <a data-nav-link href="marketplace.html">
+        <strong>Market</strong>
+        <span>Nearby pros</span>
+      </a>
+      <a data-nav-link href="dispatch.html">
+        <strong>Dispatch</strong>
+        <span>Live jobs</span>
+      </a>
+      <a data-nav-link href="customers.html">
+        <strong>Acct</strong>
+        <span>Drivers</span>
+      </a>
+      <a data-nav-link href="mechanics.html">
+        <strong>Mechs</strong>
+        <span>Network</span>
+      </a>
+      <a data-nav-link href="settings.html">
+        <strong>Prefs</strong>
+        <span>Settings</span>
+      </a>
+      <a data-nav-link href="terms.html">
+        <strong>Terms</strong>
+        <span>Legal</span>
+      </a>
+      <a data-nav-link href="support.html">
+        <strong>Support</strong>
+        <span>Help</span>
+      </a>
+    </nav>
+
+    <script src="api-client.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

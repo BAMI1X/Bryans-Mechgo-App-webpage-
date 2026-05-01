@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>MechGo Customers | Registered Customer Area</title>
+    <meta
+      name="description"
+      content="Manage registered MechGo customers, usernames, saved vehicles, and payment methods in a dedicated customer area."
+    />
+    <meta name="theme-color" content="#ff8a3d" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="site.webmanifest" />
+  </head>
+  <body class="has-tab-dock" data-page="customers">
+    <div class="bg-orb bg-orb-one"></div>
+    <div class="bg-orb bg-orb-two"></div>
+    <div class="grid-overlay"></div>
+
+    <header class="site-header shell">
+      <nav class="topbar">
+        <a class="brand" href="dashboard.html">
+          <span class="brand-mark">M</span>
+          <span>
+            <strong>MechGo</strong>
+            <small>Roadside mechanics on demand</small>
+          </span>
+        </a>
+
+        <div class="nav-actions">
+          <a data-nav-link href="dashboard.html">Dashboard</a>
+          <a data-nav-link href="marketplace.html">Marketplace</a>
+          <a data-nav-link href="dispatch.html">Dispatch</a>
+          <a data-nav-link href="customers.html">Customers</a>
+          <a data-nav-link href="mechanics.html">Mechanics</a>
+          <a data-nav-link href="settings.html">Settings</a>
+          <a data-nav-link href="terms.html">Terms</a>
+          <a data-nav-link href="support.html">Support</a>
+          <a data-nav-link href="download-app.html">Get app</a>
+          <a class="secondary-button nav-auth-link" data-auth-link data-nav-link href="signin.html">Sign in</a>
+          <a class="ghost-button nav-cta" href="#customerArea">Customer area</a>
+        </div>
+      </nav>
+
+      <div class="page-tabs" aria-label="MechGo sections">
+        <a class="page-tab" data-nav-link href="dashboard.html">
+          <strong>Dashboard</strong>
+          <span>Logged-in control center</span>
+        </a>
+        <a class="page-tab" data-nav-link href="marketplace.html">
+          <strong>Marketplace</strong>
+          <span>Nearest mechanics</span>
+        </a>
+        <a class="page-tab" data-nav-link href="dispatch.html">
+          <strong>Dispatch</strong>
+          <span>Track active jobs</span>
+        </a>
+        <a class="page-tab" data-nav-link href="customers.html">
+          <strong>Customers</strong>
+          <span>Accounts and billing</span>
+        </a>
+        <a class="page-tab" data-nav-link href="mechanics.html">
+          <strong>Mechanics</strong>
+          <span>Operator network</span>
+        </a>
+        <a class="page-tab" data-nav-link href="settings.html">
+          <strong>Settings</strong>
+          <span>Verification and preferences</span>
+        </a>
+        <a class="page-tab" data-nav-link href="download-app.html">
+          <strong>App</strong>
+          <span>Mobile download</span>
+        </a>
+        <a class="page-tab" data-nav-link href="terms.html">
+          <strong>Terms</strong>
+          <span>Policies and legal</span>
+        </a>
+        <a class="page-tab" data-nav-link href="support.html">
+          <strong>Support</strong>
+          <span>Report a problem</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <section class="page-hero shell">
+        <div class="page-hero-grid">
+          <div class="page-hero-copy" data-reveal>
+            <p class="eyebrow">Customer area</p>
+            <h1>Give registered customers a real account and billing workspace.</h1>
+            <p class="lead">
+              MechGo now includes a dedicated customer area where registered customers
+              can store usernames, vehicles, service preferences, and saved payment
+              methods for faster roadside booking.
+            </p>
+
+            <div class="hero-actions">
+              <a class="primary-button" href="#customerArea">Open customer workspace</a>
+              <a class="text-link" href="marketplace.html">Go to booking marketplace</a>
+            </div>
+
+            <div class="page-stat-grid">
+              <article data-interactive-surface>
+                <span>Registered profiles</span>
+                <strong>Each customer gets a username, home city, and primary vehicle record.</strong>
+              </article>
+              <article data-interactive-surface>
+                <span>Saved billing</span>
+                <strong>Store multiple payment methods and set a default billing source.</strong>
+              </article>
+              <article data-interactive-surface>
+                <span>Booking autofill</span>
+                <strong>Active customer data flows into the roadside booking modal.</strong>
+              </article>
+              <article data-interactive-surface>
+                <span>Account switching</span>
+                <strong>Move between registered customers and make one active for checkout.</strong>
+              </article>
+            </div>
+          </div>
+
+          <div class="page-hero-side">
+            <div class="page-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>What this unlocks</h3>
+                <span class="status-pill">Customer command center</span>
+              </div>
+              <p>
+                Repeat customers no longer have to re-enter the same details every time
+                they need help on the road. Profiles and payment methods stay ready for
+                the next breakdown.
+              </p>
+            </div>
+
+            <div class="page-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Built for growth</h3>
+                <span class="status-pill status-pill-alt">Marketplace ready</span>
+              </div>
+              <p>
+                The customer area makes MechGo feel more like a real roadside platform,
+                not just a search page, by giving people a proper account layer.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="customer-area shell" id="customerArea">
+        <div class="section-copy">
+          <p class="eyebrow">Registered customers</p>
+          <h2>Store usernames, vehicles, and payment methods in one place.</h2>
+          <p class="section-note">
+            This workspace is built for repeat MechGo users who want a faster checkout
+            flow the next time they need roadside help.
+          </p>
+        </div>
+
+        <div class="customer-area-layout">
+          <div class="customer-primary">
+            <div class="customer-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Register or update a customer</h3>
+                <span class="status-pill" id="customerFormModeLabel">Register a MechGo customer</span>
+              </div>
+
+              <form id="customerProfileForm" class="stack-form">
+                <input id="registeredCustomerId" name="registeredCustomerId" type="hidden" />
+
+                <div class="profile-tabs" role="tablist" aria-label="Customer profile sections">
+                  <button
+                    class="profile-tab is-active"
+                    data-profile-group="customer-profile"
+                    data-profile-tab="identity"
+                    type="button"
+                  >
+                    Profile
+                  </button>
+                  <button
+                    class="profile-tab"
+                    data-profile-group="customer-profile"
+                    data-profile-tab="vehicles"
+                    type="button"
+                  >
+                    Vehicles
+                  </button>
+                  <button
+                    class="profile-tab"
+                    data-profile-group="customer-profile"
+                    data-profile-tab="preferences"
+                    type="button"
+                  >
+                    Preferences
+                  </button>
+                </div>
+
+                <div
+                  class="profile-panel is-active"
+                  data-profile-group="customer-profile"
+                  data-profile-panel="identity"
+                >
+                  <div class="form-grid">
+                    <label>
+                      Full name
+                      <input
+                        id="accountFullName"
+                        name="accountFullName"
+                        type="text"
+                        placeholder="Jordan Rivera"
+                        required
+                      />
+                    </label>
+
+                    <label>
+                      Username
+                      <input
+                        id="accountUsername"
+                        name="accountUsername"
+                        type="text"
+                        placeholder="jordan.r"
+                        required
+                      />
+                    </label>
+
+                    <label>
+                      Email address
+                      <input
+                        id="accountEmail"
+                        name="accountEmail"
+                        type="email"
+                        placeholder="jordan@email.com"
+                        required
+                      />
+                    </label>
+
+                    <label>
+                      Phone number
+                      <input
+                        id="accountPhone"
+                        name="accountPhone"
+                        type="tel"
+                        placeholder="(555) 321-9876"
+                        required
+                      />
+                    </label>
+
+                    <label>
+                      Home city
+                      <input
+                        id="accountHomeCity"
+                        name="accountHomeCity"
+                        type="text"
+                        placeholder="Austin, TX"
+                        required
+                      />
+                    </label>
+
+                    <label>
+                      Address
+                      <input
+                        id="accountAddress"
+                        name="accountAddress"
+                        type="text"
+                        placeholder="1249 Riverside Dr, Austin, TX"
+                      />
+                    </label>
+
+                    <label>
+                      Preferred contact
+                      <select id="accountPreferredContact" name="accountPreferredContact">
+                        <option value="phone">Phone call</option>
+                        <option value="text">Text message</option>
+                        <option value="email">Email</option>
+                      </select>
+                    </label>
+                  </div>
+                </div>
+
+                <div
+                  class="profile-panel"
+                  data-profile-group="customer-profile"
+                  data-profile-panel="vehicles"
+                  hidden
+                >
+                  <div class="form-grid">
+                    <label>
+                      Primary vehicle
+                      <input
+                        id="accountVehicle"
+                        name="accountVehicle"
+                        type="text"
+                        placeholder="2019 Honda CR-V"
+                        required
+                      />
+                    </label>
+
+                    <label>
+                      Backup vehicle
+                      <input
+                        id="accountSecondaryVehicle"
+                        name="accountSecondaryVehicle"
+                        type="text"
+                        placeholder="2017 Toyota Camry"
+                      />
+                    </label>
+
+                    <label>
+                      Plate or tag
+                      <input
+                        id="accountPlateNumber"
+                        name="accountPlateNumber"
+                        type="text"
+                        placeholder="TX 7421MG"
+                      />
+                    </label>
+                  </div>
+
+                  <label>
+                    Roadside notes
+                    <textarea
+                      id="accountRoadsideNotes"
+                      name="accountRoadsideNotes"
+                      rows="4"
+                      placeholder="Gate code, child seat access, pet in vehicle, or any roadside details the mechanic should know."
+                    ></textarea>
+                  </label>
+                </div>
+
+                <div
+                  class="profile-panel"
+                  data-profile-group="customer-profile"
+                  data-profile-panel="preferences"
+                  hidden
+                >
+                  <div class="form-grid">
+                    <label>
+                      Membership tier
+                      <select id="accountTier" name="accountTier">
+                        <option value="starter">Roadside Starter</option>
+                        <option value="traveler">Traveler Plus</option>
+                        <option value="priority">Priority Family</option>
+                      </select>
+                    </label>
+
+                    <label>
+                      Preferred service
+                      <select id="accountServicePreference" name="accountServicePreference">
+                        <option value="battery">Battery</option>
+                        <option value="tire">Tire</option>
+                        <option value="brakes">Brakes</option>
+                        <option value="engine">Engine</option>
+                        <option value="diagnostic">Diagnostic</option>
+                      </select>
+                    </label>
+                  </div>
+                </div>
+
+                <button class="primary-button" id="customerProfileSubmitButton" type="submit">
+                  Save customer profile
+                </button>
+              </form>
+            </div>
+
+            <div class="customer-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Saved payment methods</h3>
+                <span id="paymentMethodCount">0 methods</span>
+              </div>
+              <p class="customer-panel-copy" id="paymentHint">
+                Select a customer profile to unlock saved billing methods for faster MechGo checkout.
+              </p>
+              <div id="paymentMethodList" class="payment-method-list"></div>
+            </div>
+          </div>
+
+          <div class="customer-side">
+            <div class="customer-panel customer-command-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Active customer</h3>
+                <span class="status-pill status-pill-alt" id="customerAccountBadge">No active customer</span>
+              </div>
+
+              <div class="customer-identity">
+                <strong id="activeCustomerName">No customer selected</strong>
+                <span id="activeCustomerHandle">@register-a-customer</span>
+              </div>
+
+              <p class="customer-panel-copy" id="activeCustomerSummary">
+                Create a MechGo customer account to store usernames, vehicles, and billing methods for future roadside bookings.
+              </p>
+
+              <div class="customer-metrics">
+                <article>
+                  <span>Home base</span>
+                  <strong id="activeCustomerHome">Not set</strong>
+                </article>
+                <article>
+                  <span>Primary vehicle</span>
+                  <strong id="activeCustomerVehicle">Not set</strong>
+                </article>
+                <article>
+                  <span>Default billing</span>
+                  <strong id="activeCustomerPaymentDefault">No payment method</strong>
+                </article>
+                <article>
+                  <span>Member plan</span>
+                  <strong id="activeCustomerPlan">Roadside Starter</strong>
+                </article>
+              </div>
+
+              <p class="customer-panel-copy customer-contact-copy" id="activeCustomerContact">
+                No contact details yet
+              </p>
+            </div>
+
+            <div class="customer-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Add payment method</h3>
+                <span class="status-pill" id="paymentCustomerTag">Select a customer to save billing</span>
+              </div>
+
+              <form id="paymentMethodForm" class="stack-form">
+                <div class="form-grid">
+                  <label>
+                    Method type
+                    <select id="paymentMethodType" name="paymentMethodType">
+                      <option value="visa">Visa</option>
+                      <option value="mastercard">Mastercard</option>
+                      <option value="amex">American Express</option>
+                      <option value="discover">Discover</option>
+                      <option value="applepay">Apple Pay</option>
+                      <option value="googlepay">Google Pay</option>
+                    </select>
+                  </label>
+
+                  <label>
+                    Payment label
+                    <input
+                      id="paymentMethodLabel"
+                      name="paymentMethodLabel"
+                      type="text"
+                      placeholder="Travel card"
+                    />
+                  </label>
+
+                  <label>
+                    Last four digits
+                    <input
+                      id="paymentMethodLastFour"
+                      name="paymentMethodLastFour"
+                      type="text"
+                      inputmode="numeric"
+                      maxlength="4"
+                      placeholder="4242"
+                      required
+                    />
+                  </label>
+
+                  <label>
+                    Expiry
+                    <input
+                      id="paymentMethodExpiry"
+                      name="paymentMethodExpiry"
+                      type="text"
+                      placeholder="08/28"
+                      required
+                    />
+                  </label>
+
+                  <label>
+                    Billing ZIP
+                    <input
+                      id="paymentMethodZip"
+                      name="paymentMethodZip"
+                      type="text"
+                      inputmode="numeric"
+                      placeholder="78701"
+                      required
+                    />
+                  </label>
+                </div>
+
+                <label class="toggle-field">
+                  <input id="paymentMethodDefault" name="paymentMethodDefault" type="checkbox" checked />
+                  Make this the default billing method
+                </label>
+
+                <button class="secondary-button" type="submit">Save payment method</button>
+              </form>
+            </div>
+
+            <div class="customer-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Registered customers</h3>
+                <span id="customerCount">0 customers</span>
+              </div>
+              <div id="customerDirectory" class="customer-directory"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="how shell">
+        <div class="section-copy">
+          <p class="eyebrow">Account flow</p>
+          <h2>How the customer area works inside MechGo.</h2>
+        </div>
+
+        <div class="how-grid">
+          <article data-interactive-surface>
+            <span>1</span>
+            <h3>Create the profile</h3>
+            <p>Save the customer's name, username, home city, vehicle, and membership tier.</p>
+          </article>
+          <article data-interactive-surface>
+            <span>2</span>
+            <h3>Add billing methods</h3>
+            <p>Store cards or wallets and choose the default payment method for future bookings.</p>
+          </article>
+          <article data-interactive-surface>
+            <span>3</span>
+            <h3>Use it during booking</h3>
+            <p>The active customer profile flows into the roadside booking modal for faster checkout.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <template id="customerCardTemplate">
+      <article class="customer-card" data-interactive-surface>
+        <div class="customer-card-header">
+          <div>
+            <p class="customer-card-status"></p>
+            <h3 class="customer-card-name"></h3>
+            <span class="customer-card-handle"></span>
+          </div>
+        </div>
+        <p class="customer-card-home"></p>
+        <p class="customer-card-contact"></p>
+        <p class="customer-card-plan"></p>
+        <p class="customer-card-payment"></p>
+        <div class="customer-actions">
+          <button class="secondary-button customer-select-button" type="button">Set active</button>
+          <button class="ghost-button customer-edit-button" type="button">Edit profile</button>
+        </div>
+      </article>
+    </template>
+
+    <template id="paymentMethodTemplate">
+      <article class="payment-card" data-interactive-surface>
+        <div class="payment-card-header">
+          <div>
+            <p class="payment-card-type"></p>
+            <h3 class="payment-card-label"></h3>
+          </div>
+          <span class="payment-card-badge"></span>
+        </div>
+        <p class="payment-card-meta"></p>
+        <p class="payment-card-zip"></p>
+        <div class="payment-actions">
+          <button class="secondary-button payment-set-default-button" type="button">Set default</button>
+          <button class="ghost-button payment-remove-button" type="button">Remove</button>
+        </div>
+      </article>
+    </template>
+
+    <nav class="tab-dock" aria-label="MechGo mobile navigation">
+      <a data-nav-link href="dashboard.html">
+        <strong>Dash</strong>
+        <span>Center</span>
+      </a>
+      <a data-nav-link href="marketplace.html">
+        <strong>Market</strong>
+        <span>Nearby pros</span>
+      </a>
+      <a data-nav-link href="dispatch.html">
+        <strong>Dispatch</strong>
+        <span>Live jobs</span>
+      </a>
+      <a data-nav-link href="customers.html">
+        <strong>Acct</strong>
+        <span>Drivers</span>
+      </a>
+      <a data-nav-link href="mechanics.html">
+        <strong>Mechs</strong>
+        <span>Network</span>
+      </a>
+      <a data-nav-link href="settings.html">
+        <strong>Prefs</strong>
+        <span>Settings</span>
+      </a>
+      <a data-nav-link href="download-app.html">
+        <strong>App</strong>
+        <span>Mobile</span>
+      </a>
+      <a data-nav-link href="terms.html">
+        <strong>Terms</strong>
+        <span>Legal</span>
+      </a>
+      <a data-nav-link href="support.html">
+        <strong>Support</strong>
+        <span>Help</span>
+      </a>
+    </nav>
+
+    <script src="api-client.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

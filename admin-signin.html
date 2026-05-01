@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>MechGo Admin | Operations Sign In</title>
+    <meta
+      name="description"
+      content="Sign in to the MechGo Admin portal to review registrations, complaints, verification, and dispatch activity."
+    />
+    <meta name="theme-color" content="#ff8a3d" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="site.webmanifest" />
+  </head>
+  <body data-page="admin-signin">
+    <div class="bg-orb bg-orb-one"></div>
+    <div class="bg-orb bg-orb-two"></div>
+    <div class="grid-overlay"></div>
+
+    <header class="site-header shell">
+      <nav class="topbar">
+        <a class="brand" href="admin-signin.html">
+          <span class="brand-mark">A</span>
+          <span>
+            <strong>MechGo Admin</strong>
+            <small>Operations and support command</small>
+          </span>
+        </a>
+
+        <div class="nav-actions">
+          <a href="index.html">Main site</a>
+          <a href="signin.html">Customer and mechanic sign in</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page-main">
+      <section class="page-hero shell">
+        <div class="page-hero-grid admin-login-grid">
+          <div class="page-hero-copy" data-reveal>
+            <p class="eyebrow">Separate admin website</p>
+            <h1>Sign in to the MechGo operations portal.</h1>
+            <p class="lead">
+              This admin site is kept separate from the driver and mechanic experience.
+              After sign-in, it opens a private dashboard where you can review registrations,
+              support complaints, booking activity, and verification submissions.
+            </p>
+
+            <div class="admin-signal-list">
+              <article class="page-panel" data-interactive-surface>
+                <span>Registrations</span>
+                <strong>See who joined MechGo on the driver side and the mechanic side.</strong>
+              </article>
+              <article class="page-panel" data-interactive-surface>
+                <span>Support queue</span>
+                <strong>Track complaints, billing issues, safety flags, and app problems in one place.</strong>
+              </article>
+              <article class="page-panel" data-interactive-surface>
+                <span>Verification review</span>
+                <strong>Check submitted driver documents and move them through approval or rejection.</strong>
+              </article>
+            </div>
+          </div>
+
+          <div class="admin-section-stack">
+            <div class="customer-panel admin-card" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Admin sign in</h3>
+                <span class="status-pill">Restricted access</span>
+              </div>
+              <p class="customer-panel-copy">
+                Only the admin portal is public on this side of the site. A valid admin
+                sign-in takes you straight into the dashboard.
+              </p>
+
+              <form id="adminSignInForm" class="stack-form">
+                <label>
+                  Username or email
+                  <input
+                    id="adminIdentifier"
+                    name="adminIdentifier"
+                    type="text"
+                    placeholder="admin username or email"
+                    autocomplete="username"
+                    required
+                  />
+                </label>
+
+                <label>
+                  Password
+                  <input
+                    id="adminPassword"
+                    name="adminPassword"
+                    type="password"
+                    placeholder="Enter your admin password"
+                    autocomplete="current-password"
+                    required
+                  />
+                </label>
+
+                <button class="primary-button" type="submit">Sign in to admin dashboard</button>
+              </form>
+            </div>
+
+            <div class="page-panel admin-credential-card" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Admin setup required</h3>
+                <span class="status-pill status-pill-alt">Production path</span>
+              </div>
+              <p>
+                Demo admin credentials have been removed from the public frontend. Create
+                the first admin through the protected API bootstrap endpoint before using
+                this portal in a real environment.
+              </p>
+              <div class="admin-credential-block">
+                <div>
+                  <span>Endpoint</span>
+                  <strong class="admin-demo-code">POST /api/admin/bootstrap</strong>
+                </div>
+                <div>
+                  <span>Required header</span>
+                  <strong class="admin-demo-code">x-admin-setup-token</strong>
+                </div>
+                <div>
+                  <span>Secret source</span>
+                  <strong class="admin-demo-code">ADMIN_SETUP_TOKEN</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="api-client.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>

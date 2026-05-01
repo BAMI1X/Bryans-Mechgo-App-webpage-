@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>MechGo Sign In | Customer And Mechanic Access</title>
+    <meta
+      name="description"
+      content="Sign in to MechGo or create a customer or mechanic account with a dedicated access portal."
+    />
+    <meta name="theme-color" content="#ff8a3d" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="site.webmanifest" />
+  </head>
+  <body class="has-tab-dock" data-page="signin">
+    <div class="bg-orb bg-orb-one"></div>
+    <div class="bg-orb bg-orb-two"></div>
+    <div class="grid-overlay"></div>
+
+    <header class="site-header shell">
+      <nav class="topbar">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">M</span>
+          <span>
+            <strong>MechGo</strong>
+            <small>Roadside mechanics on demand</small>
+          </span>
+        </a>
+
+        <div class="nav-actions">
+          <a data-nav-link href="terms.html">Terms</a>
+          <a data-nav-link href="support.html">Support</a>
+          <a data-nav-link href="download-app.html">Get app</a>
+          <a class="secondary-button nav-auth-link" data-auth-link data-nav-link href="signin.html">Sign in</a>
+          <a class="ghost-button nav-cta" href="#accessPortal">Access portal</a>
+        </div>
+      </nav>
+
+      <div class="page-tabs" aria-label="MechGo sections">
+        <a class="page-tab" data-nav-link href="signin.html">
+          <strong>Sign In</strong>
+          <span>Customer or mechanic access</span>
+        </a>
+        <a class="page-tab" data-nav-link href="download-app.html">
+          <strong>App</strong>
+          <span>iPhone and Android</span>
+        </a>
+        <a class="page-tab" data-nav-link href="terms.html">
+          <strong>Terms</strong>
+          <span>Policies and legal</span>
+        </a>
+        <a class="page-tab" data-nav-link href="support.html">
+          <strong>Support</strong>
+          <span>Report a problem</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <section class="page-hero shell">
+        <div class="page-hero-grid">
+          <div class="page-hero-copy" data-reveal>
+            <p class="eyebrow">Account access</p>
+            <h1>Sign in or create a MechGo account in the role you actually need.</h1>
+            <p class="lead">
+              This portal gives drivers and mechanics separate entry points so MechGo
+              feels like a real two-sided platform. Customers can unlock their private
+              roadside workspace, and mechanics can step directly into operator onboarding.
+            </p>
+
+            <div class="hero-actions">
+              <a class="primary-button" href="#accessPortal">Open access portal</a>
+              <a class="text-link" href="terms.html">Review policies first</a>
+            </div>
+
+            <div class="page-stat-grid">
+              <article data-interactive-surface>
+                <span>Two role paths</span>
+                <strong>Drivers and mechanics each get their own sign-in and account creation flow.</strong>
+              </article>
+              <article data-interactive-surface>
+                <span>Profile linking</span>
+                <strong>New accounts connect straight into the customer or mechanic workspace already in MechGo.</strong>
+              </article>
+              <article data-interactive-surface>
+                <span>Local session</span>
+                <strong>Signing in selects the matching workspace so the next booking or operator task is ready faster.</strong>
+              </article>
+              <article data-interactive-surface>
+                <span>Interactive portal</span>
+                <strong>Switch between role and access mode without leaving the screen.</strong>
+              </article>
+            </div>
+          </div>
+
+          <div class="page-hero-side">
+            <div class="page-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Professional access layer</h3>
+                <span class="status-pill">Dual-sided app</span>
+              </div>
+              <p>
+                Customer and mechanic accounts now sit behind their own sign-in page,
+                which makes the product feel much closer to a real roadside marketplace
+                instead of a demo with disconnected tabs.
+              </p>
+            </div>
+
+            <div class="page-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Important note</h3>
+                <span class="status-pill status-pill-alt">Demo auth</span>
+              </div>
+              <p>
+                This is a front-end MVP flow that stores demo account credentials
+                locally in the browser for prototype use. A production launch would
+                still need real authentication and backend security.
+              </p>
+            </div>
+
+            <div class="page-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Admin portal</h3>
+                <span class="status-pill">Separate website</span>
+              </div>
+              <p>
+                MechGo administrators use a separate sign-in site for reviewing
+                registrations, support complaints, verification submissions, and
+                platform activity.
+              </p>
+              <div class="hero-actions">
+                <a class="secondary-button" href="admin-signin.html">Open admin portal</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="auth-shell shell" id="accessPortal">
+        <div class="section-copy">
+          <p class="eyebrow">Access portal</p>
+          <h2>Choose your role, then sign in or create your account.</h2>
+          <p class="section-note">
+            Every account created here links directly into the MechGo customer or
+            mechanic workspace so the platform feels connected end to end.
+          </p>
+        </div>
+
+        <div class="auth-layout">
+          <div class="auth-stage">
+            <div class="customer-panel" data-interactive-surface>
+              <div class="auth-switcher-group">
+                <div class="auth-switcher" role="tablist" aria-label="Choose account role">
+                  <button
+                    class="auth-switch is-active"
+                    data-auth-role-tab="customer"
+                    type="button"
+                  >
+                    Customer access
+                  </button>
+                  <button class="auth-switch" data-auth-role-tab="mechanic" type="button">
+                    Mechanic access
+                  </button>
+                </div>
+
+                <div class="auth-switcher auth-switcher-secondary" role="tablist" aria-label="Choose access mode">
+                  <button
+                    class="auth-switch is-active"
+                    data-auth-mode-tab="signin"
+                    type="button"
+                  >
+                    Sign in
+                  </button>
+                  <button class="auth-switch" data-auth-mode-tab="create" type="button">
+                    Create account
+                  </button>
+                </div>
+              </div>
+
+              <p class="auth-note">
+                Customer access is built for faster roadside checkout. Mechanic access is
+                built for operator onboarding, dispatch setup, and profile activation.
+                Signed-in customers now go straight into the booking marketplace.
+              </p>
+
+              <div class="auth-panel-grid">
+                <section
+                  class="auth-form-panel is-active"
+                  data-auth-panel
+                  data-auth-role="customer"
+                  data-auth-mode="signin"
+                >
+                  <div class="panel-heading">
+                    <h3>Customer sign in</h3>
+                    <span class="status-pill">Driver access</span>
+                  </div>
+                  <p class="customer-panel-copy">
+                    Sign in with a saved customer username or email to reconnect your
+                    MechGo profile, saved vehicles, and roadside preferences.
+                  </p>
+
+                  <form id="customerSignInForm" class="stack-form">
+                    <label>
+                      Username or email
+                      <input
+                        id="customerSignInIdentifier"
+                        name="customerSignInIdentifier"
+                        type="text"
+                        placeholder="jordan.r or jordan@email.com"
+                        required
+                      />
+                    </label>
+
+                    <label>
+                      Password
+                      <input
+                        id="customerSignInPassword"
+                        name="customerSignInPassword"
+                        type="password"
+                        placeholder="Enter your password"
+                        required
+                      />
+                    </label>
+
+                    <button class="primary-button" type="submit">Sign in as customer</button>
+                  </form>
+                </section>
+
+                <section
+                  class="auth-form-panel"
+                  data-auth-panel
+                  data-auth-role="customer"
+                  data-auth-mode="create"
+                  hidden
+                >
+                  <div class="panel-heading">
+                    <h3>Create customer account</h3>
+                    <span class="status-pill">Fast booking profile</span>
+                  </div>
+                  <p class="customer-panel-copy">
+                    Create a customer account to save your username, roadside profile,
+                    and dashboard access in one place.
+                  </p>
+
+                  <form id="customerCreateForm" class="stack-form">
+                    <div class="form-grid">
+                      <label>
+                        Full name
+                        <input
+                          id="createCustomerFullName"
+                          name="createCustomerFullName"
+                          type="text"
+                          placeholder="Jordan Rivera"
+                          required
+                        />
+                      </label>
+
+                      <label>
+                        Username
+                        <input
+                          id="createCustomerUsername"
+                          name="createCustomerUsername"
+                          type="text"
+                          placeholder="jordan.r"
+                          required
+                        />
+                      </label>
+
+                      <label>
+                        Email address
+                        <input
+                          id="createCustomerEmail"
+                          name="createCustomerEmail"
+                          type="email"
+                          placeholder="jordan@email.com"
+                          required
+                        />
+                      </label>
+
+                      <label>
+                        Phone number
+                        <input
+                          id="createCustomerPhone"
+                          name="createCustomerPhone"
+                          type="tel"
+                          placeholder="(555) 321-9876"
+                          required
+                        />
+                      </label>
+
+                      <label>
+                        Home city
+                        <input
+                          id="createCustomerHomeCity"
+                          name="createCustomerHomeCity"
+                          type="text"
+                          placeholder="Austin, TX"
+                          required
+                        />
+                      </label>
+
+                      <label>
+                        Primary vehicle
+                        <input
+                          id="createCustomerVehicle"
+                          name="createCustomerVehicle"
+                          type="text"
+                          placeholder="2019 Honda CR-V"
+                          required
+                        />
+                      </label>
+
+                      <label>
+                        Password
+                        <input
+                          id="createCustomerPassword"
+                          name="createCustomerPassword"
+                          type="password"
+                          placeholder="At least 6 characters"
+                          required
+                        />
+                      </label>
+
+                      <label>
+                        Confirm password
+                        <input
+                          id="createCustomerPasswordConfirm"
+                          name="createCustomerPasswordConfirm"
+                          type="password"
+                          placeholder="Confirm password"
+                          required
+                        />
+                      </label>
+                    </div>
+
+                    <button class="primary-button" type="submit">Create customer account</button>
+                  </form>
+                </section>
+
+                <section
+                  class="auth-form-panel"
+                  data-auth-panel
+                  data-auth-role="mechanic"
+                  data-auth-mode="signin"
+                  hidden
+                >
+                  <div class="panel-heading">
+                    <h3>Mechanic sign in</h3>
+                    <span class="status-pill">Operator access</span>
+                  </div>
+                  <p class="customer-panel-copy">
+                    Sign in as a mechanic to reopen your operator workspace, receiving
+                    setup, and marketplace-ready dispatch profile.
+                  </p>
+
+                  <form id="mechanicSignInForm" class="stack-form">
+                    <label>
+                      Username or email
+                      <input
+                        id="mechanicSignInIdentifier"
+                        name="mechanicSignInIdentifier"
+                        type="text"
+                        placeholder="copperwrench or dispatch@shop.com"
+                        required
+                      />
+                    </label>
+
+                    <label>
+                      Password
+                      <input
+                        id="mechanicSignInPassword"
+                        name="mechanicSignInPassword"
+                        type="password"
+                        placeholder="Enter your password"
+                        required
+                      />
+                    </label>
+
+                    <button class="primary-button" type="submit">Sign in as mechanic</button>
+                  </form>
+                </section>
+
+                <section
+                  class="auth-form-panel"
+                  data-auth-panel
+                  data-auth-role="mechanic"
+                  data-auth-mode="create"
+                  hidden
+                >
+                  <div class="panel-heading">
+                    <h3>Create mechanic account</h3>
+                    <span class="status-pill">Operator onboarding</span>
+                  </div>
+                  <p class="customer-panel-copy">
+                    Create a mechanic account to save your dispatch identity, coverage
+                    city, and live operator presence in MechGo.
+                  </p>
+
+                  <form id="mechanicCreateForm" class="stack-form">
+                    <div class="form-grid">
+                      <label>
+                        Business name
+                        <input
+                          id="createMechanicBusinessName"
+                          name="createMechanicBusinessName"
+                          type="text"
+                          placeholder="Copper Wrench Mobile"
+                          required
+                        />
+                      </label>
+
+                      <label>
+                        Username
+                        <input
+                          id="createMechanicUsername"
+                          name="createMechanicUsername"
+                          type="text"
+                          placeholder="copperwrench"
+                          required
+                        />
+                      </label>
+
+                      <label>
+                        Lead mechanic
+                        <input
+                          id="createMechanicLeadName"
+                          name="createMechanicLeadName"
+                          type="text"
+                          placeholder="Avery Cole"
+                          required
+                        />
+                      </label>
+
+                      <label>
+                        Email address
+                        <input
+                          id="createMechanicEmail"
+                          name="createMechanicEmail"
+                          type="email"
+                          placeholder="dispatch@shop.com"
+                          required
+                        />
+                      </label>
+
+                      <label>
+                        Phone number
+                        <input
+                          id="createMechanicPhone"
+                          name="createMechanicPhone"
+                          type="tel"
+                          placeholder="(555) 555-0119"
+                          required
+                        />
+                      </label>
+
+                      <label>
+                        Base city
+                        <input
+                          id="createMechanicBaseCity"
+                          name="createMechanicBaseCity"
+                          type="text"
+                          placeholder="Austin, TX"
+                          required
+                        />
+                      </label>
+
+                      <label>
+                        Primary service
+                        <select id="createMechanicPrimaryService" name="createMechanicPrimaryService">
+                          <option value="battery">Battery</option>
+                          <option value="tire">Tire</option>
+                          <option value="engine">Engine</option>
+                          <option value="brakes">Brakes</option>
+                          <option value="diagnostic" selected>Diagnostic</option>
+                        </select>
+                      </label>
+
+                      <label>
+                        Password
+                        <input
+                          id="createMechanicPassword"
+                          name="createMechanicPassword"
+                          type="password"
+                          placeholder="At least 6 characters"
+                          required
+                        />
+                      </label>
+
+                      <label>
+                        Confirm password
+                        <input
+                          id="createMechanicPasswordConfirm"
+                          name="createMechanicPasswordConfirm"
+                          type="password"
+                          placeholder="Confirm password"
+                          required
+                        />
+                      </label>
+                    </div>
+
+                    <button class="primary-button" type="submit">Create mechanic account</button>
+                  </form>
+                </section>
+              </div>
+            </div>
+          </div>
+
+          <div class="auth-side">
+            <div class="customer-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Session status</h3>
+                <span class="status-pill" id="sessionStatus">Signed out</span>
+              </div>
+              <p class="eyebrow auth-eyebrow" id="sessionRoleLabel">Choose customer or mechanic access</p>
+              <h3 class="session-name" id="sessionName">No MechGo account signed in</h3>
+              <p class="customer-panel-copy" id="sessionMeta">
+                Create a MechGo account as a customer or mechanic, or sign in to an
+                existing demo account stored on this device.
+              </p>
+              <p class="customer-panel-copy" id="sessionCoverageLabel">
+                Sign in to connect MechGo to a saved customer or mechanic workspace.
+              </p>
+
+              <div class="session-actions">
+                <a class="secondary-button" id="sessionDestinationLink" href="index.html">
+                  Return home
+                </a>
+                <button class="ghost-button" id="signOutButton" type="button" disabled>Sign out</button>
+              </div>
+            </div>
+
+            <div class="customer-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Saved access</h3>
+                <span class="status-pill status-pill-alt">Local demo auth</span>
+              </div>
+
+              <div class="auth-metrics">
+                <article>
+                  <span>Customer accounts</span>
+                  <strong id="customerAccountCount">0 customer accounts</strong>
+                </article>
+                <article>
+                  <span>Mechanic accounts</span>
+                  <strong id="mechanicAccountCount">0 mechanic accounts</strong>
+                </article>
+                <article>
+                  <span>What happens next</span>
+                  <strong>Signing in activates the matching workspace and keeps the flow connected.</strong>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="how shell">
+        <div class="section-copy">
+          <p class="eyebrow">Access flow</p>
+          <h2>How the sign-in page fits into MechGo.</h2>
+        </div>
+
+        <div class="how-grid">
+          <article data-interactive-surface>
+            <span>1</span>
+            <h3>Choose the role</h3>
+            <p>Start in customer mode for roadside help or mechanic mode for operator onboarding.</p>
+          </article>
+          <article data-interactive-surface>
+            <span>2</span>
+            <h3>Create or sign in</h3>
+            <p>The portal lets you switch between existing access and new account creation without leaving the page.</p>
+          </article>
+          <article data-interactive-surface>
+            <span>3</span>
+            <h3>Jump to the workspace</h3>
+            <p>Once the session is active, MechGo points you directly to the matching customer or mechanic area.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <nav class="tab-dock" aria-label="MechGo mobile navigation">
+      <a data-nav-link href="signin.html">
+        <strong>Sign In</strong>
+        <span>Access</span>
+      </a>
+      <a data-nav-link href="download-app.html">
+        <strong>App</strong>
+        <span>Mobile</span>
+      </a>
+      <a data-nav-link href="terms.html">
+        <strong>Terms</strong>
+        <span>Legal</span>
+      </a>
+      <a data-nav-link href="support.html">
+        <strong>Support</strong>
+        <span>Help</span>
+      </a>
+    </nav>
+
+    <script src="api-client.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

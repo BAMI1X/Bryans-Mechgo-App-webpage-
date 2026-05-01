@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>MechGo Settings | Account Verification And Preferences</title>
+    <meta
+      name="description"
+      content="Manage MechGo account verification, security, notifications, and profile preferences from the logged-in settings center."
+    />
+    <meta name="theme-color" content="#ff8a3d" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="site.webmanifest" />
+  </head>
+  <body class="has-tab-dock" data-page="settings">
+    <div class="bg-orb bg-orb-one"></div>
+    <div class="bg-orb bg-orb-two"></div>
+    <div class="grid-overlay"></div>
+
+    <header class="site-header shell">
+      <nav class="topbar">
+        <a class="brand" href="dashboard.html">
+          <span class="brand-mark">M</span>
+          <span>
+            <strong>MechGo</strong>
+            <small>Roadside mechanics on demand</small>
+          </span>
+        </a>
+
+        <div class="nav-actions">
+          <a data-nav-link href="dashboard.html">Dashboard</a>
+          <a data-nav-link href="marketplace.html">Marketplace</a>
+          <a data-nav-link href="dispatch.html">Dispatch</a>
+          <a data-nav-link href="customers.html">Customers</a>
+          <a data-nav-link href="mechanics.html">Mechanics</a>
+          <a data-nav-link href="settings.html">Settings</a>
+          <a data-nav-link href="terms.html">Terms</a>
+          <a data-nav-link href="support.html">Support</a>
+          <a data-nav-link href="download-app.html">Get app</a>
+          <a class="secondary-button nav-auth-link" data-auth-link data-nav-link href="dashboard.html">@account</a>
+          <a class="ghost-button nav-cta" href="#settingsCenter">Open settings</a>
+        </div>
+      </nav>
+
+      <div class="page-tabs" aria-label="MechGo sections">
+        <a class="page-tab" data-nav-link href="dashboard.html">
+          <strong>Dashboard</strong>
+          <span>Logged-in control center</span>
+        </a>
+        <a class="page-tab" data-nav-link href="marketplace.html">
+          <strong>Marketplace</strong>
+          <span>Nearest mechanics</span>
+        </a>
+        <a class="page-tab" data-nav-link href="dispatch.html">
+          <strong>Dispatch</strong>
+          <span>Track active jobs</span>
+        </a>
+        <a class="page-tab" data-nav-link href="customers.html">
+          <strong>Customers</strong>
+          <span>Accounts and billing</span>
+        </a>
+        <a class="page-tab" data-nav-link href="mechanics.html">
+          <strong>Mechanics</strong>
+          <span>Operator network</span>
+        </a>
+        <a class="page-tab" data-nav-link href="settings.html">
+          <strong>Settings</strong>
+          <span>Verification and preferences</span>
+        </a>
+        <a class="page-tab" data-nav-link href="terms.html">
+          <strong>Terms</strong>
+          <span>Policies and legal</span>
+        </a>
+        <a class="page-tab" data-nav-link href="support.html">
+          <strong>Support</strong>
+          <span>Report a problem</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <section class="page-hero shell">
+        <div class="page-hero-grid">
+          <div class="page-hero-copy" data-reveal>
+            <p class="eyebrow">Account settings</p>
+            <h1>Control verification, alerts, and security from one logged-in page.</h1>
+            <p class="lead">
+              MechGo settings now give signed-in customers and mechanics a place to verify
+              contact details, change account email and password, switch appearance mode,
+              and tune the notifications that power roadside dispatch.
+            </p>
+
+            <div class="hero-actions">
+              <a class="primary-button" href="#settingsCenter">Open settings center</a>
+              <a class="text-link" href="dashboard.html">Back to dashboard</a>
+            </div>
+
+            <div class="page-stat-grid">
+              <article data-interactive-surface>
+                <span>Email verification</span>
+                <strong>Confirm the address tied to account access and receipts.</strong>
+              </article>
+              <article data-interactive-surface>
+                <span>Phone verification</span>
+                <strong>Validate the number used for roadside updates and mechanic coordination.</strong>
+              </article>
+              <article data-interactive-surface>
+                <span>Security controls</span>
+                <strong>Change your password, turn on two-step verification, and keep recovery contact info current.</strong>
+              </article>
+              <article data-interactive-surface>
+                <span>Appearance and alerts</span>
+                <strong>Choose dark or light mode and tune dispatch alerts, receipts, and marketing messages.</strong>
+              </article>
+            </div>
+          </div>
+
+          <div class="page-hero-side">
+            <div class="page-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Why it helps</h3>
+                <span class="status-pill">Account hygiene</span>
+              </div>
+              <p>
+                The public side stays minimal now. Verification, preferences, billing-adjacent
+                settings, and security controls live behind sign-in where they belong.
+              </p>
+            </div>
+
+            <div class="page-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Role aware</h3>
+                <span class="status-pill status-pill-alt">Customer and mechanic</span>
+              </div>
+              <p>
+                The same settings center works for both sides of the marketplace while still
+                respecting each account's linked customer or mechanic profile.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="customer-area shell" id="settingsCenter">
+        <div class="section-copy">
+          <p class="eyebrow">Verification and preferences</p>
+          <h2>Keep account access safe and dispatch communication accurate.</h2>
+          <p class="section-note">
+            These controls are tied to the signed-in MechGo account on this device, not the
+            public landing page.
+          </p>
+        </div>
+
+        <div class="customer-area-layout">
+          <div class="customer-primary">
+            <div class="customer-panel customer-command-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Account overview</h3>
+                <span class="status-pill status-pill-alt">Live account</span>
+              </div>
+
+              <div class="customer-identity">
+                <strong id="settingsDisplayName">@account</strong>
+                <span id="settingsRoleSummary">Account settings and verification controls</span>
+              </div>
+
+              <div class="customer-metrics">
+                <article>
+                  <span>Email status</span>
+                  <strong id="settingsEmailStatus">Email verification pending</strong>
+                </article>
+                <article>
+                  <span>Phone status</span>
+                  <strong id="settingsPhoneStatus">Phone verification pending</strong>
+                </article>
+                <article>
+                  <span>Security state</span>
+                  <strong id="settingsSecurityStatus">Two-step verification off</strong>
+                </article>
+                <article>
+                  <span>Dispatch sharing</span>
+                  <strong id="settingsSharingStatus">Dispatch location sharing enabled</strong>
+                </article>
+              </div>
+            </div>
+
+            <div class="customer-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Verification actions</h3>
+                <span class="status-pill">Contact validation</span>
+              </div>
+
+              <div class="form-grid">
+                <label>
+                  Primary email
+                  <input id="settingsPrimaryEmail" type="email" readonly />
+                </label>
+
+                <label>
+                  Linked phone
+                  <input id="settingsPrimaryPhone" type="text" readonly />
+                </label>
+              </div>
+
+              <div class="hero-actions">
+                <button class="secondary-button" id="verifyEmailButton" type="button">Verify email</button>
+                <button class="ghost-button" id="verifyPhoneButton" type="button">Verify phone</button>
+              </div>
+
+              <p class="customer-panel-copy">
+                Updating your account email will reset email verification until the new
+                address is confirmed.
+              </p>
+            </div>
+
+            <div class="customer-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Password and sign-out</h3>
+                <span class="status-pill status-pill-alt">Security access</span>
+              </div>
+
+              <form id="passwordChangeForm" class="stack-form">
+                <div class="form-grid">
+                  <label>
+                    Current password
+                    <input
+                      id="settingsCurrentPassword"
+                      name="settingsCurrentPassword"
+                      type="password"
+                      placeholder="Enter current password"
+                    />
+                  </label>
+
+                  <label>
+                    New password
+                    <input
+                      id="settingsNewPassword"
+                      name="settingsNewPassword"
+                      type="password"
+                      placeholder="At least 6 characters"
+                    />
+                  </label>
+
+                  <label>
+                    Confirm new password
+                    <input
+                      id="settingsConfirmPassword"
+                      name="settingsConfirmPassword"
+                      type="password"
+                      placeholder="Confirm new password"
+                    />
+                  </label>
+                </div>
+
+                <div class="hero-actions">
+                  <button class="secondary-button" type="submit">Change password</button>
+                  <button class="ghost-button" id="settingsSignOutButton" type="button">Log out</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="customer-side">
+            <div class="customer-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Account identity</h3>
+                <span class="status-pill">Username and email</span>
+              </div>
+
+              <form id="emailChangeForm" class="stack-form">
+                <div class="form-grid">
+                  <label>
+                    Username
+                    <input id="settingsUsername" type="text" readonly />
+                  </label>
+
+                  <label>
+                    New email
+                    <input
+                      id="settingsNewEmail"
+                      name="settingsNewEmail"
+                      type="email"
+                      placeholder="new@email.com"
+                    />
+                  </label>
+
+                  <label>
+                    Confirm new email
+                    <input
+                      id="settingsConfirmEmail"
+                      name="settingsConfirmEmail"
+                      type="email"
+                      placeholder="Repeat new email"
+                    />
+                  </label>
+                </div>
+
+                <button class="secondary-button" type="submit">Update email</button>
+              </form>
+            </div>
+
+            <div class="customer-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Preference controls</h3>
+                <span class="status-pill status-pill-alt">Saved to account</span>
+              </div>
+
+              <form id="settingsForm" class="stack-form">
+                <div class="form-grid">
+                  <label>
+                    Recovery email
+                    <input
+                      id="settingsRecoveryEmail"
+                      name="settingsRecoveryEmail"
+                      type="email"
+                      placeholder="backup@email.com"
+                    />
+                  </label>
+
+                  <label>
+                    Emergency contact
+                    <input
+                      id="settingsEmergencyContact"
+                      name="settingsEmergencyContact"
+                      type="text"
+                      placeholder="Morgan Rivera | (555) 111-2488"
+                    />
+                  </label>
+
+                  <label>
+                    Appearance mode
+                    <select id="settingsThemeMode" name="settingsThemeMode">
+                      <option value="dark">Dark mode</option>
+                      <option value="light">Light mode</option>
+                    </select>
+                  </label>
+                </div>
+
+                <label class="toggle-field">
+                  <input id="settingsTwoFactor" name="settingsTwoFactor" type="checkbox" />
+                  Enable two-step verification for sign-in security
+                </label>
+
+                <label class="toggle-field">
+                  <input id="settingsLocationSharing" name="settingsLocationSharing" type="checkbox" />
+                  Allow MechGo to use location sharing for faster dispatch handoff
+                </label>
+
+                <label class="toggle-field">
+                  <input id="settingsSmsAlerts" name="settingsSmsAlerts" type="checkbox" />
+                  Send roadside updates and dispatch alerts by text message
+                </label>
+
+                <label class="toggle-field">
+                  <input id="settingsEmailReceipts" name="settingsEmailReceipts" type="checkbox" />
+                  Send booking receipts and account notices by email
+                </label>
+
+                <label class="toggle-field">
+                  <input id="settingsMarketing" name="settingsMarketing" type="checkbox" />
+                  Allow MechGo to send optional promotions and feature updates
+                </label>
+
+                <button class="primary-button" type="submit">Save account settings</button>
+              </form>
+            </div>
+
+            <div class="customer-panel" data-interactive-surface>
+              <div class="panel-heading">
+                <h3>Session actions</h3>
+                <span class="status-pill status-pill-alt">Dashboard return</span>
+              </div>
+              <p class="customer-panel-copy">
+                Jump back to the dashboard, keep booking from the marketplace, or sign out
+                from this device when you are done.
+              </p>
+              <div class="hero-actions">
+                <a class="secondary-button" href="dashboard.html">Open dashboard</a>
+                <a class="ghost-button" href="marketplace.html">Open marketplace</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <nav class="tab-dock" aria-label="MechGo mobile navigation">
+      <a data-nav-link href="dashboard.html">
+        <strong>Dash</strong>
+        <span>Center</span>
+      </a>
+      <a data-nav-link href="marketplace.html">
+        <strong>Market</strong>
+        <span>Nearby pros</span>
+      </a>
+      <a data-nav-link href="dispatch.html">
+        <strong>Dispatch</strong>
+        <span>Live jobs</span>
+      </a>
+      <a data-nav-link href="customers.html">
+        <strong>Acct</strong>
+        <span>Drivers</span>
+      </a>
+      <a data-nav-link href="mechanics.html">
+        <strong>Mechs</strong>
+        <span>Network</span>
+      </a>
+      <a data-nav-link href="settings.html">
+        <strong>Prefs</strong>
+        <span>Settings</span>
+      </a>
+      <a data-nav-link href="terms.html">
+        <strong>Terms</strong>
+        <span>Legal</span>
+      </a>
+      <a data-nav-link href="support.html">
+        <strong>Support</strong>
+        <span>Help</span>
+      </a>
+    </nav>
+
+    <script src="api-client.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Download MechGo | Mobile App</title>
+    <meta
+      name="description"
+      content="Download the MechGo mobile app for faster roadside mechanic booking on iPhone or Android."
+    />
+    <meta name="theme-color" content="#ff8a3d" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="site.webmanifest" />
+  </head>
+  <body class="has-tab-dock" data-page="download-app">
+    <div class="bg-orb bg-orb-one"></div>
+    <div class="bg-orb bg-orb-two"></div>
+    <div class="grid-overlay"></div>
+
+    <header class="site-header shell">
+      <nav class="topbar">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">M</span>
+          <span>
+            <strong>MechGo</strong>
+            <small>Roadside mechanics on demand</small>
+          </span>
+        </a>
+
+        <div class="nav-actions">
+          <a data-nav-link href="terms.html">Terms</a>
+          <a data-nav-link href="support.html">Support</a>
+          <a data-nav-link href="download-app.html">Get app</a>
+          <a class="secondary-button nav-auth-link" data-auth-link data-nav-link href="signin.html">Sign in</a>
+          <a class="ghost-button nav-cta" href="signin.html?role=customer&mode=create">Create account</a>
+        </div>
+      </nav>
+
+      <div class="page-tabs" aria-label="MechGo sections">
+        <a class="page-tab" data-nav-link href="signin.html">
+          <strong>Sign In</strong>
+          <span>Customer or mechanic access</span>
+        </a>
+        <a class="page-tab" data-nav-link href="download-app.html">
+          <strong>App</strong>
+          <span>iPhone and Android</span>
+        </a>
+        <a class="page-tab" data-nav-link href="terms.html">
+          <strong>Terms</strong>
+          <span>Policies and legal</span>
+        </a>
+        <a class="page-tab" data-nav-link href="support.html">
+          <strong>Support</strong>
+          <span>Report a problem</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <section class="page-hero shell">
+        <div class="page-hero-grid">
+          <div class="page-hero-copy" data-reveal>
+            <p class="eyebrow">MechGo mobile app</p>
+            <h1>Book roadside help faster from your phone.</h1>
+            <p class="lead">
+              The mobile app is the most convenient way for drivers to create an
+              account, save a vehicle, compare nearby mechanics, and request help with
+              a clear estimate.
+            </p>
+
+            <div class="hero-actions">
+              <a class="primary-button" href="https://www.apple.com/app-store/" rel="noopener">Download for iPhone</a>
+              <a class="secondary-button" href="https://play.google.com/store/apps" rel="noopener">Get it on Android</a>
+            </div>
+            <div class="hero-actions">
+              <a class="text-link" href="../mechgo-mobile/index.html">Open mobile app preview</a>
+            </div>
+          </div>
+
+          <div class="quick-request-card">
+            <div class="card-header">
+              <span class="status-pill">Mobile-first</span>
+              <h2>Same account, same admin visibility.</h2>
+              <p>
+                Accounts created in the mobile prototype are saved to the same MechGo
+                account and customer records used by the web dashboard and admin portal.
+              </p>
+            </div>
+            <div class="signal-row">
+              <span>Mobile signup</span>
+              <span>Web login</span>
+              <span>Admin review</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="shell trust-strip" aria-label="Mobile app benefits">
+        <article data-interactive-surface>
+          <span>Faster requests</span>
+          <strong>Drivers can choose a service, location, urgency, and mechanic in a phone-sized flow.</strong>
+        </article>
+        <article data-interactive-surface>
+          <span>Shared account</span>
+          <strong>Customer profile data is linked to the same account structure the web app uses.</strong>
+        </article>
+        <article data-interactive-surface>
+          <span>Admin visibility</span>
+          <strong>Admin records show whether a customer came from the mobile app or web app.</strong>
+        </article>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <nav class="tab-dock" aria-label="MechGo mobile navigation">
+      <a data-nav-link href="signin.html">
+        <strong>Sign In</strong>
+        <span>Access</span>
+      </a>
+      <a data-nav-link href="download-app.html">
+        <strong>App</strong>
+        <span>Mobile</span>
+      </a>
+      <a data-nav-link href="terms.html">
+        <strong>Terms</strong>
+        <span>Legal</span>
+      </a>
+      <a data-nav-link href="support.html">
+        <strong>Support</strong>
+        <span>Help</span>
+      </a>
+    </nav>
+
+    <script src="api-client.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
